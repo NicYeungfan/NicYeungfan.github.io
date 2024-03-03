@@ -5,4 +5,5 @@ Project Lists
 ![image](https://github.com/NicYeungfan/NicYeungfan.github.io/blob/main/Towngas2.png)
 ![image](https://github.com/NicYeungfan/NicYeungfan.github.io/blob/main/Towngas1.png)
 ![image](https://github.com/NicYeungfan/NicYeungfan.github.io/blob/main/ultrasoundimage.png)
+![image](https://github.com/NicYeungfan/NicYeungfan.github.io/blob/main/Towngas3.jpg)
 Related paper "Yang, F., Shi, D., Lo, L. Y., Mao, Q., Zhang, J., & Lam, K. H*, "Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model", Remote Sensing, Jan. 2023. (IF = 5)" [3autoultraremotesensing-15-00599.pdf](https://github.com/NicYeungfan/NicYeungfan.github.io/blob/main/3autoultraremotesensing-15-00599.pdf)
