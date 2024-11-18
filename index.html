@@ -294,44 +294,19 @@ table tr:hover {
 
        
         <h1>Publications</h1>
-       # Example list of publications with details
-publications = [
-    {"title": "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries", "year": 2024, "url": "https://doi.org/10.1016/j.est.2024.113391", "journal": "Journal of Energy Storage", "authors": "Yang F*, MAO Q, Zhang J, Guocui BAO, Ka wai Eric Cheng, Lam, K. H*", "if": 9.4},
-    {"title": "Modified extended Kalman filtering algorithm for precise voltage and state-of-charge estimations of rechargeable batteries", "year": 2022, "url": "https://doi.org/10.1016/j.est.2022.105831", "journal": "Journal of Energy Storage", "authors": "Yang, F*, Shi, D., & Lam, K. H*", "if": 9.4},
-    {"title": "Scientometric research and critical analysis of battery state-of-charge estimation", "year": 2023, "url": "https://doi.org/10.1016/j.est.2022.106283", "journal": "Journal of Energy Storage", "authors": "Yang, F, Shi, D., Mao, Q & Lam, K. H*", "if": 9.4},
-    {"title": "Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model", "year": 2023, "url": "https://doi.org/10.3390/rs15030599", "journal": "Remote Sensing", "authors": "Yang, F, Shi, D., Lo, L. Y., Mao, Q., Zhang, J., & Lam, K. H*", "if": 5},
-    {"title": "Auto-Evaluation Model for the Prediction of Building Energy Consumption That Combines Modified Kalman Filtering and Long Short-Term Memory", "year": 2023, "url": "https://doi.org/10.3390/su152215749", "journal": "Sustainability", "authors": "Yang, F, Mao, Q*", "if": 3.9},
-    {"title": "Broadband transparent ultrasound transducer with polymethyl methacrylate as matching layer for in vivo photoacoustic microscopy", "year": 2023, "url": "https://doi.org/10.1016/j.pacs.2023.100548", "journal": "Photoacoustics", "authors": "J. Zhang,..., Yang, F, & Lam, K. H*", "if": 7.9},
-    {"title": "Samarium-Doped Lead Magnesium Niobate-Lead Titanate Ceramics Fabricated by Sintering the Mixture of Two Different Crystalline Phases", "year": 2023, "url": "", "journal": "Materials", "authors": "Guocui BAO, Dongliang SHI, Jiaming ZHANG, Yang, F, Lam, K. H*", "if": 3.4},
-    {"title": "Miniature Ultrasound Transducer Incorporating Sm-PMN-PT 1-3 Composite", "year": 2024, "url": "", "journal": "Journal of Composites Science", "authors": "Jiaming ZHANG, Guocui BAO, Wen GAO, Riqiang LIN, Yang, F, Lam, K. H*", "if": 3.3},
-    {"title": "An investigation of fire evacuation performance in irregular underground commercial building affected by multiple parameters", "year": 2021, "url": "https://doi.org/10.1016/j.jobe.2021.102146", "journal": "Journal of Building Engineering", "authors": "Wang, D, Yang, Y, Zhou, T, Yang F", "if": 6.4},
-    {"title": "Scientometric Research and Critical Analysis of Gait and Balance in Older Adults", "year": 2024, "url": "https://doi.org/10.3390/s24103199", "journal": "Sensors", "authors": "Mao Q, Zheng W, Shi M, Yang F*", "if": 3.9},
-    {"title": "Extended Kalman Filter Algorithm for Accurate State-of-Charge Estimation in Lithium Batteries", "year": 2024, "url": "https://doi.org/10.3390/pr12081560", "journal": "Processes", "authors": "Gen Li, Mao Q*, Yang F*", "if": ""},
-    {"title": "Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor", "year": 2024, "url": "https://doi.org/10.3390/s24185998", "journal": "Sensors", "authors": "Zhou J, Mao Q*, Yang F, Shi M, Hu Z", "if": ""},
-]
-
-# Sort publications by year (descending)
-publications_sorted = sorted(publications, key=lambda x: x["year"], reverse=True)
-
-# Assign descending index numbers
-total_pubs = len(publications_sorted)
-for i, pub in enumerate(publications_sorted, start=1):
-    pub["index"] = total_pubs - i + 1
-
-# Generate HTML code
-html_output = "<ol>\n"
-for pub in publications_sorted:
-    html_output += f'    <li><p><b>{pub["authors"]}</b>. "{pub["title"]}". <i>{pub["journal"]}</i>, {pub["year"]}'
-    if pub["if"]:
-        html_output += f' (IF = {pub["if"]})'
-    if pub["url"]:
-        html_output += f'; <a href="{pub["url"]}" target="_blank">Read</a>'
-    html_output += "</p></li>\n"
-html_output += "</ol>"
-
-# Output the generated HTML
-print(html_output)
-
+       <ol reversed>
+        <li><p><b>Yang F*</b>, MAO Q, Zhang, J, Guocui BAO, Ka wai Eric Cheng, Lam, K. H*. "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method". <i>Journal of Energy Storage</i>, 2024 (IF = 9.4); <a href="https://doi.org/10.1016/j.est.2024.113391" target="_blank">Read</a></p></li>
+        <li><p>Jiaming ZHANG, Guocui BAO, Wen GAO, Riqiang LIN, <b>Yang, F</b>., Lam, K. H*. "Miniature Ultrasound Transducer Incorporating Sm-PMN-PT 1-3 Composite". <i>Journal of Composites Science</i>, 2024 (IF = 3.3)</p></li>
+        <li><p>Mao Q, Zheng W, Shi M, <b>Yang F*</b>. "Scientometric Research and Critical Analysis of Gait and Balance in Older Adults". <i>Sensors</i>, 2024 (IF = 3.9); <a href="https://doi.org/10.3390/s24103199" target="_blank">Read</a></p></li>
+        <li><p>Gen Li, Mao Q*, <b>Yang F*</b>. "Extended Kalman Filter Algorithm for Accurate State-of-Charge Estimation in Lithium Batteries". <i>Processes</i>, 2024; <a href="https://doi.org/10.3390/pr12081560" target="_blank">Read</a></p></li>
+        <li><p>Zhou J, Mao Q*, <b>Yang F</b>, Shi M, Hu Z. "Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor". <i>Sensors</i>, 2024; <a href="https://doi.org/10.3390/s24185998" target="_blank">Read</a></p></li>
+        <li><p><b>Yang, F</b>., Shi, D., Mao, Q & Lam, K. H*. "Scientometric research and critical analysis of battery state-of-charge estimation". <i>Journal of Energy Storage</i>, Jan. 2023 (IF = 9.4); <a href="https://doi.org/10.1016/j.est.2022.106283" target="_blank">Read</a></p></li>
+        <li><p><b>Yang, F</b>., Shi, D., Lo, L. Y., Mao, Q., Zhang, J., & Lam, K. H*. "Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model". <i>Remote Sensing</i>, Jan. 2023 (IF = 5); <a href="https://doi.org/10.3390/rs15030599" target="_blank">Read</a></p></li>
+        <li><p>J. Zhang,..., <b>Yang, F</b>, & Lam, K. H*. "Broadband transparent ultrasound transducer with polymethyl methacrylate as matching layer for in vivo photoacoustic microscopy". <i>Photoacoustics</i>, Aug. 2023 (IF = 7.9); <a href="https://doi.org/10.1016/j.pacs.2023.100548" target="_blank">Read</a></p></li>
+        <li><p>Guocui BAO, Dongliang SHI, Jiaming ZHANG, <b>Yang, F</b>., Lam, K. H*. "Samarium-Doped Lead Magnesium Niobate-Lead Titanate Ceramics Fabricated by Sintering the Mixture of Two Different Crystalline Phases". <i>Materials</i>, 2023 (IF = 3.4)</p></li>
+        <li><p><b>Yang, F*</b>., Shi, D., & Lam, K. H*. "Modified extended Kalman filtering algorithm for precise voltage and state-of-charge estimations of rechargeable batteries". <i>Journal of Energy Storage</i>, Oct. 2022 (IF = 9.4); <a href="https://doi.org/10.1016/j.est.2022.105831" target="_blank">Read</a></p></li>
+        <li><p>Wang, D, Yang, Y, Zhou, T, <b>Yang F</b>. "An investigation of fire evacuation performance in irregular underground commercial building affected by multiple parameters". <i>Journal of Building Engineering</i>, 2021 (IF = 6.4); <a href="https://doi.org/10.1016/j.jobe.2021.102146" target="_blank">Read</a></p></li>
+    </ol>
 
         <h1>Conference papers</h1>
         <ol>
