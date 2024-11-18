@@ -28,7 +28,21 @@
             box-shadow: 0 4px 2px -2px gray;
         }
 
-        /* Menu item links */
+        /* Content area */
+        #layout-content {
+            padding: 20px;
+            background: linear-gradient(to right, #ffffff 0%, #f0f8ff 100%);
+            background-size: cover;
+            width: 100%;
+        }
+
+        /* Styling the menu */
+        #layout-menu .menu-category {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #005b96;
+        }
+
         #layout-menu .menu-item a {
             text-decoration: none;
             color: #007acc;
@@ -42,44 +56,10 @@
             background-color: #e0f7fa;
         }
 
-        /* Content area */
-        #layout-content {
-            padding: 20px;
-            background: linear-gradient(to right, #ffffff 0%, #f0f8ff 100%);
-            width: 100%;
-        }
-
+        /* Content title */
         #layout-content h1 {
-            font-size: 2.5em;
+            font-size: 2em;
             color: #333;
-        }
-
-        #layout-content h2 {
-            border-bottom: 3px solid #005b96;
-            margin-bottom: 15px;
-            color: #005b96;
-        }
-
-        ul, ol {
-            margin-left: 20px;
-        }
-
-        ol {
-            list-style: decimal;
-        }
-
-        p, li {
-            font-size: 1rem;
-            line-height: 1.6;
-        }
-
-        a {
-            color: #007acc;
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
         }
     </style>
 </head>
@@ -89,46 +69,130 @@
         <div class="menu-item"><a href="https://nicyeungfan.github.io/projectnic.github.io/">Project</a></div>
         <div class="menu-item"><a href="https://nicyeungfan.github.io/Students.github.io/">Students</a></div>
         <div class="menu-item"><a href="https://orcid.org/0000-0002-2482-7884">ORCID</a></div>
-        <div class="menu-item"><a href="https://maps.app.goo.gl/LL97Q22Mry4y5RE3A">Links</a></div>
+        <div class="menu-item"><a href="https://maps.app.goo.gl/LL97Q22Mry4y5RE3A" class="menu-item">Links</a></div>
     </div>
 
     <div id="layout-content">
-        <h1>Dr. FAN, YANG</h1>
-        <p>PhD,<br />
-           Hong Kong Polytechnic University,<br />
-           11 Yuk Choi Road,<br />
-           Hung Hom,<br />
-           E-mail: <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
-        </p>
+        <div id="toptitle">
+            <h1>Dr. FAN, YANG</h1>
+        </div>
+        <table class="imgtable">
+            <tr>
+                <td align="left">
+                    <p>PhD,<br />
+                        Hong Kong Polytechnic University,<br />
+                        11 Yuk Choi Road,<br />
+                        Hung Hom,<br />
+                        E-mail: <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
+                    </p>
+                </td>
+            </tr>
+        </table>
 
-        <h2>About Me</h2>
+        <h2>About me</h2>
         <p>I received my Master's and Ph.D. degrees from the Hong Kong Polytechnic University. My main research interests include battery health monitoring and ultrasonic transducer applications. I focus on using algorithms to solve practical problems.</p>
 
         <h2>Research</h2>
+        <p>My research interests include:</p>
         <ul>
             <li>Intelligent algorithms in ultrasonic and battery health monitoring applications</li>
             <li>Ultrasound application in industry</li>
             <li>Ultrasonic application in medical imaging</li>
         </ul>
 
-        <h2>Current Work</h2>
+        <h3>Current work</h3>
         <ul>
             <li>Ultrasonic application in battery health monitoring</li>
         </ul>
 
-        <h2>Recent Journal Publications</h2>
+        <h3>Under review</h3>
         <ol>
-            <li><p><b>Yang F*</b>, MAO Q, Zhang, J, Guocui BAO, Ka Wai Eric Cheng, Lam, K. H*. "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries". <i>Journal of Energy Storage</i>, 2024. (<a href="https://doi.org/10.1016/j.est.2024.113391">Read</a>)</p></li>
-            <li><p><b>Yang, F*</b>, Shi, D., & Lam, K. H*, "Modified Extended Kalman Filtering Algorithm for Voltage Estimations". <i>Journal of Energy Storage</i>, 2022. (<a href="https://doi.org/10.1016/j.est.2022.105831">Read</a>)</p></li>
-            <li><p><b>Yang, F</b>, Shi, D., Mao, Q & Lam, K. H*, "Scientometric Research on SoC Estimation". <i>Journal of Energy Storage</i>, 2023. (<a href="https://doi.org/10.1016/j.est.2022.106283">Read</a>)</p></li>
-            <li><p><b>Yang, F</b>, Shi, D., Lo, L. Y., & Mao, Q., "Auto-Diagnosis of Time-of-Flight in Ultrasonic Signals". <i>Remote Sensing</i>, 2023. (<a href="https://doi.org/10.3390/rs15030599">Read</a>)</p></li>
+            <li><p><b>Yang, F</b>. "", <i></i>, 2024.</p></li>
+            <li><p><b>Yang, F</b>., "Non", <i>Non</i>, 2024.</p></li>
         </ol>
 
-        <h2>Conference Papers</h2>
+        <h3>Recent Journal Publications</h3>
         <ol>
-            <li><p>Qian MAO, <b>Yang, F</b>, et al., "Sensor-Based Interventions vs. Traditional Therapies". <i>Proceedings of HFES</i>, 2023. (<a href="https://doi.org/10.1177/21695067231192520">Read</a>)</p></li>
-            <li><p><b>Yang, F</b>, et al., "Sliding Window Technique for Ultrasonic Signal Analysis". <i>NDT Conference</i>, 2024. (<a href="https://doi.org/10.1784/ndt2023.3b3">Read</a>)</p></li>
+            <li><p> <b>Yang F*</b>, MAO Q, Zhang, J,Guocui BAO, Ka wai Eric Cheng, Lam, K. H*. "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method". <i>Journal of Energy Storage</i>, 2024.(IF = 9.4); <a href="https://doi.org/10.1016/j.est.2024.113391">Read</a></p></li>
+            <li><p><b>Yang, F*</b>., Shi, D., & Lam, K. H*, "Modified extended Kalman filtering algorithm for precise voltage and state-of-charge estimations of rechargeable batteries", <i>Journal of Energy Storage</i>, Oct. 2022. (IF = 9.4) <a href="https://doi.org/10.1016/j.est.2022.105831">Read</a>.</p></li>
+            <li><p><b>Yang, F</b>., Shi, D., Mao, Q & Lam, K. H*, "Scientometric research and critical analysis of battery state-of-charge estimation", <i>Journal of Energy Storage</i>, Jan. 2023. (IF = 9.4) <a href="https://doi.org/10.1016/j.est.2022.106283">Read</a>.</p></li>
+            <li><p><b>Yang, F</b>., Shi, D., Lo, L. Y., Mao, Q., Zhang, J., & Lam, K. H*, "Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model", <i>Remote Sensing</i>, Jan. 2023. (IF = 5) <a href="https://doi.org/10.3390/rs15030599">Read</a>.</p></li>
+            <li><p><b>Yang, F</b>., Mao, Q.* "Auto-Evaluation Model for the Prediction of Building Energy Consumption That Combines Modified Kalman Filtering and Long Short-Term Memory", <i>Sustainability</i>, Nov. 2023. (IF = 3.9) <a href="https://doi.org/10.3390/su152215749">Read</a>.</p></li>
+            <li><p>J. Zhang,..., <b>Yang, F</b>, & Lam, K. H*, "Broadband transparent ultrasound transducer with polymethyl methacrylate as matching layer for in vivo photoacoustic microscopy", <i>Photoacoustics</i>, Aug. 2023. (IF = 7.9) <a href="https://doi.org/10.1016/j.pacs.2023.100548">Read</a>.</p></li>
+            <li><p>Guocui BAO, Dongliang SHI, Jiaming ZHANG, <b>Yang, F</b>., Lam, K. H* "Samarium-Doped Lead Magnesium Niobate-Lead Titanate Ceramics Fabricated by Sintering the Mixture of Two Different Crystalline Phases", <i>Materials</i>, 2023. (IF = 3.4)</p></li>
+            <li><p>Jiaming ZHANG, Guocui BAO, Wen GAO, Riqiang LIN, <b>Yang, F</b>., Lam, K. H* "Miniature Ultrasound Transducer Incorporating Sm-PMN-PT 1-3 Composite", <i>Journal of Composites Science</i>, 2024
+            . (IF = 3.3)</p></li>
+            <li><p>Wang, D, Yang, Y, Zhou, T, <b>Yang F</b>. "An investigation of fire evacuation performance in irregular underground commercial building affected by multiple parameters". <i>Journal of Building Engineering</i>, 2021 (IF = 6.4); 37, 102146. <a href="https://doi.org/10.1016/j.jobe.2021.102146">Read</a></p></li>
+            <li><p>Mao Q, Zheng W, Shi M, <b>Yang F*</b>. "Scientometric Research and Critical Analysis of Gait and Balance in Older Adults". <i>Sensors</i>, 2024 (IF = 3.9); 24(10):3199. <a href="https://doi.org/10.3390/s24103199">Read</a></p></li>
+            <li><p>Gen Li, Mao Q*, <b>Yang F*</b>. "Extended Kalman Filter Algorithm for Accurate State-of-Charge Estimation in Lithium Batteries". <i>Processes</i>, 2024. <a href="https://doi.org/10.3390/pr12081560">Read</a></p></li>
+            <li><p>Zhou J, Mao Q*, <b>Yang F</b>, Shi M, Hu Z. ", Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor". <i>Sensors</i>, 2024. <a href="https://doi.org/10.3390/s24185998">Read</a></p></li>
         </ol>
+
+        <h3>Conference papers</h3>
+        <ol>
+            <li><p>Qian MAO,...,<b>Yang, F</b>., Hailiang, WANG*, "Do Sensor-Based Interventions Differ from Traditional Physical Therapies in Improving Older Adults’ Balance?", <i>Proceedings of the Human Factors and Ergonomics Society Annual Meeting</i>, 2023. <a href="https://doi.org/10.1177/21695067231192520">Read</a>.</p></li>
+            <li><p><b>Yang, F</b>., Qian MAO, Menghan Shi, Fangling Xie, Ka wai Eric CHENG* "Enhancing Ultrasound Imaging through Convolutional Neural Networks: A Health Informatics Approach", <i>AHFE 2024</i>, 2024. <a href="http://doi.org/10.54941/ahfe1005073">Read</a>.</p></li>
+            <li><p><b>Yang, F</b>., Qian MAO, Lam, K. H* "A novel time-of-flight auto-diagnosis model for ultrasonic signal using a sliding window technique based on empirical mode decomposition", <i>Proceedings of the Annual British Conference on Non-Destructive Testing, Volume 2023, Number 1</i>, 2024. <a href="https://doi.org/10.1784/ndt2023.3b3">Read</a>.</p></li>
+        </ol>
+
+        <p><b>Note</b>: * indicates the corresponding author.</p>
+        <p><a href="https://no">Full list of publications in Google Scholar</a>.</p>
+
+        <h3>Academic Service</h3>
+        <ul>
+            <li><p>Reviewer for Aging Clinical and Experimental Research</p></li>
+            <li><p>Reviewer for Journal of the American Medical Directors Association (JAMDA)</p></li>
+            <li><p>Reviewer for Journal of Energy Storage</p></li>
+            <li><p>Reviewer for ISA Transactions</p></li>
+            <li><p>Reviewer for Engineering Applications of Artificial Intelligence</p></li>
+        </ul>
+        <p><a href="https://orcid.org/0000-0002-2482-7884">More details in Publons</a></p>
+
+        <h2>Projects</h2>
+        <ol>
+            <li><p>Algorithm development and GUI design for ultrasound inspection in project “Development of Gas Pipe Diagnostic Technology by Nondestructive Thermographic and Ultrasonic Methods” (PRP/014/19FX, ZM34), 2021-2022, PolyU</p></li>
+            <li><p>Develop AIoT aquaponics system and provide lessons to students, 2022, VINCI AI, <b>Yang, F</b>.</p></li>
+            <li><p><a href="https://www.polyu.edu.hk/kteo/news-and-events/events/2023/09/poc/">(POC-23(1)-013) Monitoring of indoor health with AI-based environmental perception system, admitted to HKSTP Pre-incubation Programme (IDEATION), 100k $, 2023.05.11, <b>Yang, F</b>., Mao Qian</a></p></li>
+        </ol>
+
+        <h2>Education</h2>
+        <p>To be supplemented.</p>
+
+        <h3>Competitions and Awards</h3>
+        <ol>
+            <li><p>(POC-23(1)-013) AI-based environmental perception system shortlisted as an outstanding team during Final Screening, 2023.05.11</p></li>
+            <li><p>Shortlisted during Techathon 2024+ Finale, 2024.01.26-2024.01.28</p></li>
+            <li><p>Nominee, Hong Kong Polytechnic University, Schmidt Science Fellows 2025</p></li>
+            <li><p>Dr. Winnie S M Tang-PolyU Student Innovation & Entrepreneurship Scholarship, 20k $, 2023</p></li>
+        </ol>
+
+        <h3>Activities</h3>
+        <ol>
+            <li><p>2023 8th International Conference on Control and Robotics Engineering (ICCRE 2023) (Oral Presentation), Japan</p></li>
+            <li><p>60th Annual British Conference on NDT (NDT 2023) (Oral Presentation), Northampton, United Kingdom</p></li>
+            <li><p>Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), Hong Kong, <a href="Session_Chair_Fan_Yang.pdf">Certification</a>, <a href="http://perc.polyu.edu.hk/Timetable_24.html">Timetable</a>.</p></li>
+            <li><p>67th International Annual Meeting Human Factors and Ergonomics Society (HFES 2023), Washington, DC, United States</p></li>
+        </ol>
+
+        <h2>Instruments</h2>
+        <ul>
+            <li><p><a href="CTS.pdf">CTS9009PLUS</a></p></li>
+            <li><p><a href="CTSpic.pdf">CTS9009PLUSpic</a></p></li>
+            <li><p><a href="Olympus5MHz.pdf">Olympus5MHz</a></p></li>
+            <li><p><a href="transducers.pdf">Transducers</a></p></li>
+            <li><p><a href="YTHJC2013.pdf">YTHJC2013</a></p></li>
+            <li><p><a href="PZT5H.pdf">PZT5H 4M05MMTHICKNESS</a></p></li>
+            <li><p><a href="ESOLDER3022.pdf">ESOLDER3022100108</a></p></li>
+        </ul>
+
+        <h2>Work Experience</h2>
+        <ol>
+            <li><p>Postdoctoral Fellow, Hong Kong Polytechnic University, Hong Kong</p></li>
+            <li><p>Research Assistant, Hong Kong Polytechnic University, Hong Kong</p></li>
+            <li><p>Lecturer, Po Leung Kuk Celine Ho Yam Tong, VINCI AI, Hong Kong</p></li>
+        </ol>
+
+        <p><br /><a href="https://theses.lib.polyu.edu.hk/handle/200/13144">PhDThesis</a></p>
     </div>
 </body>
 </html>
