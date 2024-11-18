@@ -10,6 +10,128 @@
     <!-- Adding Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        /* Background and font enhancements */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(120deg, #f6f9fc 25%, #e3e7ea 75%);
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Menu bar improvements */
+#layout-menu {
+    background-color: #f0f8ff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 4px 2px -2px gray;
+}
+
+#layout-menu .menu-item a {
+    text-decoration: none;
+    color: #005b96;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+}
+
+#layout-menu .menu-item a:hover {
+    background-color: #e0f7fa;
+    color: #003f6b;
+}
+
+/* Title and content styling */
+#layout-content {
+    padding: 30px;
+    background: linear-gradient(to right, #ffffff 0%, #f0f8ff 100%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+#layout-content h1 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #005b96;
+    margin-bottom: 20px;
+}
+
+#layout-content h2 {
+    font-size: 1.8rem;
+    color: #005b96;
+    border-bottom: 2px solid #005b96;
+    margin-bottom: 15px;
+}
+
+#layout-content p,
+#layout-content li {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+ul, ol {
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+
+/* Links styling */
+a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #003f6b;
+    text-decoration: underline;
+}
+
+/* Buttons for table or future links */
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #005b96;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #003f6b;
+}
+
+/* Table improvements (if used) */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+table th {
+    background-color: #f0f8ff;
+    color: #005b96;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:hover {
+    background-color: #e0f7fa;
+}
+
         /* Applying the Roboto font */
         body {
             font-family: 'Roboto', sans-serif;
