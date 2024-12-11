@@ -19,34 +19,37 @@
 
         /* Main Content Styles */
         #layout-content {
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 900px;
+            padding: 20px 10px;
             background-color: #f9f9f9;
-            border: 1px solid #ccc;
-            border-radius: 8px;
-            text-align: left;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
         }
 
         /* Menu Bar Styles */
         #layout-menu {
-            margin-bottom: 20px; /* Add space below the menu */
+            display: flex;
+            justify-content: center;
+            align-items: center;
             background-color: #ffffff;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 8px;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+
+        #layout-menu .menu-item {
+            margin: 0 10px;
         }
 
         #layout-menu .menu-item a {
             text-decoration: none;
             color: blue;
             font-weight: bold;
-            margin-right: 10px;
             font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
         }
 
         #layout-menu .menu-item a:hover {
-            text-decoration: underline;
+            background-color: #e0e0e0;
         }
 
         /* Heading Styles */
@@ -94,7 +97,7 @@
 </head>
 <body>
     <div id="layout-content">
-        <!-- Menu Bar Moved Inside Content -->
+        <!-- Horizontal Menu Bar -->
         <div id="layout-menu">
             <div class="menu-item"><a href="index.html" class="current">Home</a></div>
             <div class="menu-item"><a href="https://nicyeungfan.github.io/projectnic.github.io/">Project</a></div>
@@ -118,7 +121,7 @@
             <li>Ultrasound application in industry</li>
             <li>Ultrasonic application in medical imaging</li>
         </ul>
-         <h2>Publications</h2>
+          <h2>Publications</h2>
         <ol>
             <li><b>Yang F*</b>, MAO Q, Zhang J, Guocui BAO, Ka wai Eric Cheng, Lam KH*. "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method". <i>Journal of Energy Storage</i>, 2024 (IF = 9.4); <a href="https://doi.org/10.1016/j.est.2024.113391">Read</a></li>
             <li>Jiaming ZHANG, Guocui BAO, Wen GAO, Riqiang LIN, <b>Yang, F</b>, Lam KH*. "Miniature Ultrasound Transducer Incorporating Sm-PMN-PT 1-3 Composite". <i>Journal of Composites Science</i>, 2024 (IF = 3.3)</li>
