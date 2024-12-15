@@ -121,20 +121,56 @@
         <h2>About Me</h2>
         <p>I received my Master's and Ph.D. degrees from <a href="https://www.polyu.edu.hk/about-polyu/">the Hong Kong Polytechnic University</a>. My main research interests include battery health monitoring and ultrasonic transducer applications. I focus on using algorithms to solve practical problems.</p>
 
-       <h2>News</h2>
-<h3>Publication News</h3>
-<ul>
-    <li class="news-item">December 2024: Paper titled "Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model" accepted in Applied Energy.</li>
-    <li class="news-item">August 2024: Paper titled "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method" accepted in Journal of Energy Storage.</li>
-</ul>
+        <h2>News</h2>
+        <h3>Publication News</h3>
+        <ul id="publication-news"></ul>
 
-<h3>Happened</h3>
-<ul>
-    <li class="news-item">December 2024: Congrats our team was selected as Top performers teams in Microfund of HKPolyU.</li>
-    <li class="news-item">June 2024: Dr. Fan YANG served as Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE.</li>
-    <li class="news-item">December 2023: Attended the 67th International Annual Meeting of Human Factors and Ergonomics Society in Washington, DC.</li>
-</ul>
+        <h3>Happened</h3>
+        <ul id="happened-news"></ul>
+    </div>
 
+    <!-- JavaScript Code Starts Here -->
+    <script>
+        const publicationNews = [
+            {
+                date: "December 2024",
+                description: "Paper titled 'Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model' accepted in Applied Energy."
+            },
+            {
+                date: "August 2024",
+                description: "Paper titled 'Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method' accepted in Journal of Energy Storage."
+            }
+        ];
+
+        const happenedNews = [
+            {
+                date: "December 2024",
+                description: "Congrats our team was selected as Top performers teams in Microfund of HKPolyU."
+            },
+            {
+                date: "June 2024",
+                description: "Dr. Fan YANG served as Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE."
+            },
+            {
+                date: "December 2023",
+                description: "Attended the 67th International Annual Meeting of Human Factors and Ergonomics Society in Washington, DC."
+            }
+        ];
+
+        function populateNews(newsArray, containerId) {
+            const container = document.getElementById(containerId);
+            newsArray.forEach(news => {
+                const listItem = document.createElement('li');
+                listItem.className = 'news-item';
+                listItem.textContent = `${news.date}: ${news.description}`;
+                container.appendChild(listItem);
+            });
+        }
+
+        populateNews(publicationNews, 'publication-news');
+        populateNews(happenedNews, 'happened-news');
+    </script>
+    
         <h2>Research</h2>
         <ul>
             <li>Intelligent algorithms in ultrasonic and battery health monitoring applications</li>
