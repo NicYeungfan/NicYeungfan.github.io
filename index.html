@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="jemdoc.css" type="text/css" />
     <title>FAN, YANG</title>
@@ -18,7 +18,8 @@
         }
 
         /* Main Content Styles */
-         padding: 20px;
+        #layout-content {
+            padding: 20px;
             margin-left: 30px; /* Add space on the left */
             background-color: #f9f9f9;
             border-top: 1px solid #ccc;
@@ -26,7 +27,14 @@
         }
 
         ol {
-            padding-left: 40px; /* Ensure list numbers are visible */
+            list-style-type: decimal; /* Ensure numbers are displayed */
+            padding-left: 40px; /* Adjust spacing for visibility */
+            margin-left: 20px; /* Add space for better alignment */
+        }
+
+        li {
+            margin-bottom: 5px;
+            font-size: 18px; /* Ensure readability */
         }
 
         /* Menu Bar Styles */
@@ -51,12 +59,12 @@
             padding: 5px 10px;
             border-radius: 4px;
         }
-        .news-item {
-    font-weight: bold;
-    font-style: italic;
-    color: blue;
-}
 
+        .news-item {
+            font-weight: bold;
+            font-style: italic;
+            color: blue;
+        }
 
         #layout-menu .menu-item a:hover {
             background-color: #e0e0e0;
@@ -81,16 +89,6 @@
         h3 {
             font-size: 20px;
             margin-top: 15px;
-            margin-bottom: 5px;
-        }
-
-        /* List Styles */
-        ul, ol {
-            padding-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        li {
             margin-bottom: 5px;
         }
 
@@ -133,7 +131,7 @@
         <ul id="happened-news"></ul>
     </div>
 
-    <!-- JavaScript Code Starts Here -->
+        <!-- JavaScript Code Starts Here -->
     <script>
         const publicationNews = [
             {
@@ -154,10 +152,6 @@
             {
                 date: "June 2024",
                 description: "Dr. Fan YANG served as Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE."
-            },
-            {
-                date: "December 2023",
-                description: "Attended the 67th International Annual Meeting of Human Factors and Ergonomics Society in Washington, DC."
             }
         ];
 
@@ -173,8 +167,26 @@
 
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
-        console.log("JavaScript is working!");
+
+        function dynamicTest() {
+            const testNewsItem = {
+                date: "Dynamic Test",
+                description: "This is a dynamically added test item to verify functionality."
+            };
+
+            const container = document.getElementById('publication-news');
+            const listItem = document.createElement('li');
+            listItem.className = 'news-item';
+            listItem.textContent = `${testNewsItem.date}: ${testNewsItem.description}`;
+            container.appendChild(listItem);
+
+            console.log("Dynamic test item added.");
+        }
+
+        dynamicTest();
     </script>
+
+
     
         <h2>Research</h2>
         <ul>
