@@ -172,22 +172,7 @@
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
 
-        function dynamicTest() {
-            const testNewsItem = {
-                date: "2022",
-                description: "Paper titled 'Modified Extended Kalman Filtering Algorithm for Precise Voltage and State-of-Charge Estimations of Rechargeable Batteries'"accepted by Journal of Energy Storage.
-            };
 
-            const container = document.getElementById('publication-news');
-            const listItem = document.createElement('li');
-            listItem.className = 'news-item';
-            listItem.textContent = `${testNewsItem.date}: ${testNewsItem.description}`;
-            container.appendChild(listItem);
-
-            console.log("Dynamic test item added.");
-        }
-
-        dynamicTest();
     </script>
 
 
