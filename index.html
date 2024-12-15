@@ -123,7 +123,7 @@
         <h2>About Me</h2>
         <p>I received my Master's and Ph.D. degrees from <a href="https://www.polyu.edu.hk/about-polyu/">the Hong Kong Polytechnic University</a>. My main research interests include battery health monitoring and ultrasonic transducer applications. I focus on using algorithms to solve practical problems.</p>
 
-        <h2>News</h2>
+           <h2>News</h2>
         <h3>Publication News</h3>
         <ul id="publication-news"></ul>
 
@@ -131,7 +131,7 @@
         <ul id="happened-news"></ul>
     </div>
 
-        <!-- JavaScript Code Starts Here -->
+    <!-- JavaScript Code Starts Here -->
     <script>
         const publicationNews = [
             {
@@ -141,10 +141,6 @@
             {
                 date: "August 2024",
                 description: "Paper titled 'Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method' accepted in Journal of Energy Storage."
-            }
-             {
-                date: "Jan 2023",
-                description: "Paper titled 'Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model' accepted in Remote Sensing."
             }
         ];
 
@@ -156,6 +152,10 @@
             {
                 date: "June 2024",
                 description: "Dr. Fan YANG served as Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE."
+            },
+            {
+                date: "December 2023",
+                description: "Attended the 67th International Annual Meeting of Human Factors and Ergonomics Society in Washington, DC."
             }
         ];
 
@@ -164,18 +164,15 @@
             newsArray.forEach(news => {
                 const listItem = document.createElement('li');
                 listItem.className = 'news-item';
-                listItem.textContent = `${news.date}: ${news.description}`;
+                listItem.textContent = ${news.date}: ${news.description};
                 container.appendChild(listItem);
             });
         }
 
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
-
-
+        console.log("JavaScript is working!");
     </script>
-
-
     
         <h2>Research</h2>
         <ul>
