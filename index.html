@@ -159,15 +159,15 @@
             }
         ];
 
-        function populateNews(newsArray, containerId) {
-            const container = document.getElementById(containerId);
-            newsArray.forEach(news => {
-                const listItem = document.createElement('li');
-                listItem.className = 'news-item';
-                listItem.textContent = ${news.date}: ${news.description};
-                container.appendChild(listItem);
-            });
-        }
+function populateNews(newsArray, containerId) {
+    const container = document.getElementById(containerId);
+    newsArray.forEach(news => {
+        const listItem = document.createElement('li');
+        listItem.className = 'news-item';
+        listItem.textContent = `${news.date}: ${news.description}`;
+        container.appendChild(listItem);
+    });
+}
 
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
