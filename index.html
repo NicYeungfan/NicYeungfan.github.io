@@ -102,6 +102,33 @@
     a:hover {
         text-decoration: underline;
     }
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News Sections</title>
+    <style>
+        .news-container {
+            width: 300px;
+            height: 200px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        .news-item {
+            margin: 5px 0;
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        .news-section {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+        }
+
+    
 </style>
 
 </head>
@@ -135,6 +162,13 @@
 
     <!-- JavaScript Code Starts Here -->
     <script>
+            <h1>News Updates</h1>
+    <div class="news-section">
+        <div class="news-container" id="publication-news"></div>
+        <div class="news-container" id="happened-news"></div>
+    </div>
+
+    <script>
         const publicationNews = [
             {
                 date: "December 2024",
@@ -163,22 +197,22 @@
                 date: "Dec 2022",
                 description: "Invited by Mr. LP Cheung (Lecturer at HKBU), Fan YANG gave a lesson about IoT (Internet of Things) to students of Po Leung Kuk Celine Ho Yam Tong College, Hong Kong."
             }
-                       
         ];
 
-function populateNews(newsArray, containerId) {
-    const container = document.getElementById(containerId);
-    newsArray.forEach(news => {
-        const listItem = document.createElement('li');
-        listItem.className = 'news-item';
-        listItem.textContent = `${news.date}: ${news.description}`;
-        container.appendChild(listItem);
-    });
-}
+        function populateNews(newsArray, containerId) {
+            const container = document.getElementById(containerId);
+            newsArray.forEach(news => {
+                const listItem = document.createElement('li');
+                listItem.className = 'news-item';
+                listItem.textContent = `${news.date}: ${news.description}`;
+                container.appendChild(listItem);
+            });
+        }
 
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
         console.log("JavaScript is working!");
+
     </script>
     
         <h2>Research</h2>
