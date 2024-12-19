@@ -1,112 +1,32 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
+    <meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
     <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <link rel="stylesheet" href="jemdoc.css" type="text/css" />
     <title>FAN, YANG</title>
-<style>
-    /* Global Styles */
-    body {
-        font-family: Calibri, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: white;
-        color: black;
-        font-size: 18px;
-        line-height: 1.5;
-    }
-
-    /* Main Content Styles */
-    #layout-content {
-        padding: 20px;
-        margin-left: 30px; /* Add space on the left */
-        background-color: #f9f9f9;
-        border-top: 1px solid #ccc;
-        border-bottom: 1px solid #ccc;
-    }
-
-    ol {
-        list-style-type: decimal; /* Ensure numbers are displayed */
-        padding-left: 40px; /* Adjust spacing for visibility */
-        margin-left: 20px; /* Add space for better alignment */
-    }
-
-    li {
-        margin-bottom: 5px;
-        font-size: 18px; /* Ensure readability */
-    }
-
-    /* Menu Bar Styles */
-    #layout-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background: url('bar.jpg') no-repeat center center; /* Add background image */
-        background-size: cover; /* Ensure the image covers the entire menu bar */
-        padding: 20px 0;
-        border-bottom: 1px solid #ccc;
-    }
-
-    #layout-menu .menu-item {
-        margin: 0 10px;
-    }
-
-    #layout-menu .menu-item a {
-        text-decoration: none;
-        color: white; /* Change text color for better visibility on the image */
-        font-weight: bold;
-        font-size: 18px;
-        padding: 5px 10px;
-        border-radius: 4px;
-    }
-
-    .news-item {
-        font-weight: bold;
-        font-style: italic;
-        color: blue;
-    }
-
-    #layout-menu .menu-item a:hover {
-        background-color: rgba(255, 255, 255, 0.3); /* Add semi-transparent hover effect */
-    }
-
-    /* Heading Styles */
-    h1, h2, h3 {
-        color: black;
-    }
-
-    h1 {
-        font-size: 28px;
-        margin-bottom: 10px;
-    }
-
-    h2 {
-        font-size: 24px;
-        margin-top: 20px;
-        margin-bottom: 10px;
-    }
-
-    h3 {
-        font-size: 20px;
-        margin-top: 15px;
-        margin-bottom: 5px;
-    }
-
-    /* Links */
-    a {
-        color: blue;
-        text-decoration: none;
-    }
-
-    a:hover {
-        text-decoration: underline;
-    }
-
-        <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>News Sections</title>
     <style>
+        /* Global Styles */
+        body {
+            font-family: Calibri, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        /* Main Content Styles */
+        #layout-content {
+            padding: 20px;
+            margin-left: 30px;
+            background-color: #f9f9f9;
+            border-top: 1px solid #ccc;
+            border-bottom: 1px solid #ccc;
+        }
+
+        /* News Container Styles */
         .news-container {
             width: 300px;
             height: 200px;
@@ -117,20 +37,49 @@
             border-radius: 5px;
             background-color: #f9f9f9;
         }
+
+        /* News Item Styles */
         .news-item {
             margin: 5px 0;
             font-family: Arial, sans-serif;
             font-size: 14px;
         }
+
+        /* Section Layout Styles */
         .news-section {
             display: flex;
             gap: 20px;
             justify-content: center;
         }
 
-    
-</style>
+        /* Menu Bar Styles */
+        #layout-menu {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('bar.jpg') no-repeat center center;
+            background-size: cover;
+            padding: 20px 0;
+            border-bottom: 1px solid #ccc;
+        }
 
+        #layout-menu .menu-item {
+            margin: 0 10px;
+        }
+
+        #layout-menu .menu-item a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+
+        #layout-menu .menu-item a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+    </style>
 </head>
 <body>
     <div id="layout-content">
@@ -152,20 +101,17 @@
         <h2>About Me</h2>
         <p>I received my Master's and Ph.D. degrees from <a href="https://www.polyu.edu.hk/about-polyu/">the Hong Kong Polytechnic University</a>. My main research interests include algorithm development and ultrasonic transducer applications. I focus on using algorithms to solve practical problems.</p>
 
-           <h2>News</h2>
-        <h3>Publication News</h3>
-        <ul id="publication-news"></ul>
-
-        <h3>Happened</h3>
-        <ul id="happened-news"></ul>
-    </div>
-
-    <!-- JavaScript Code Starts Here -->
-    <script>
-            <h1>News Updates</h1>
-    <div class="news-section">
-        <div class="news-container" id="publication-news"></div>
-        <div class="news-container" id="happened-news"></div>
+        <h2>News</h2>
+        <div class="news-section">
+            <div>
+                <h3>Publication News</h3>
+                <div class="news-container" id="publication-news"></div>
+            </div>
+            <div>
+                <h3>Happened</h3>
+                <div class="news-container" id="happened-news"></div>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -202,7 +148,7 @@
         function populateNews(newsArray, containerId) {
             const container = document.getElementById(containerId);
             newsArray.forEach(news => {
-                const listItem = document.createElement('li');
+                const listItem = document.createElement('div');
                 listItem.className = 'news-item';
                 listItem.textContent = `${news.date}: ${news.description}`;
                 container.appendChild(listItem);
@@ -211,8 +157,6 @@
 
         populateNews(publicationNews, 'publication-news');
         populateNews(happenedNews, 'happened-news');
-        console.log("JavaScript is working!");
-
     </script>
     
         <h2>Research</h2>
