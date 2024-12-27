@@ -141,19 +141,22 @@
             }
         ];
 
-        function populateNews(newsArray, containerId) {
-            const container = document.getElementById(containerId);
-            newsArray.forEach(news => {
-                const listItem = document.createElement('div');
-                listItem.className = 'news-item';
-                listItem.textContent = `${news.date}: ${news.description}`;
-                container.appendChild(listItem);
-            });
-        }
+    // Function to populate news
+    function populateNews(newsArray, containerId) {
+        const container = document.getElementById(containerId);
+        container.innerHTML = ""; // Clear existing content
+        newsArray.forEach(news => {
+            const listItem = document.createElement('div');
+            listItem.className = 'news-item';
+            listItem.textContent = `${news.date}: ${news.description}`;
+            container.appendChild(listItem);
+        });
+    }
 
-        populateNews(publicationNews, 'publication-news');
-        populateNews(happenedNews, 'happened-news');
-    </script>
+    // Call populateNews to display the news in the respective containers
+    populateNews(publicationNews, 'publication-news');
+    populateNews(happenedNews, 'happened-news');
+</script>
  
         <h2>Research</h2>
         <ul>
