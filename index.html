@@ -12,10 +12,10 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.8;
+            color: #2c3e50;
+            background: #fafafa;
             min-height: 100vh;
         }
 
@@ -27,10 +27,10 @@
 
         /* Header */
         header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: #2c3e50;
             color: white;
             padding: 2rem 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-bottom: 3px solid #34495e;
         }
 
         .header-content {
@@ -91,8 +91,7 @@
 
         /* Navigation */
         nav {
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
+            background: #34495e;
             padding: 1rem 0;
             margin-top: 20px;
         }
@@ -110,13 +109,10 @@
             text-decoration: none;
             font-weight: 500;
             padding: 10px 20px;
-            border-radius: 25px;
-            transition: all 0.3s ease;
         }
 
         nav a:hover, nav a.current {
-            background: rgba(255,255,255,0.2);
-            transform: translateY(-2px);
+            background: #2c3e50;
         }
 
         /* Main Content */
@@ -128,28 +124,25 @@
             background: white;
             margin-bottom: 30px;
             padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .section:hover {
-            transform: translateY(-5px);
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .section h2 {
-            color: #667eea;
+            color: #2c3e50;
             font-size: 2rem;
             margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 3px solid #667eea;
+            border-bottom: 2px solid #2c3e50;
             display: inline-block;
+            font-weight: 600;
         }
 
         .section h3 {
-            color: #764ba2;
+            color: #34495e;
             font-size: 1.5rem;
             margin: 25px 0 15px 0;
+            font-weight: 600;
         }
 
         /* About Section */
@@ -168,13 +161,14 @@
         .research-interests {
             background: #f8f9fa;
             padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #2c3e50;
         }
 
         .research-interests h4 {
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .research-interests ul {
@@ -185,13 +179,15 @@
         .research-interests li {
             padding: 8px 0;
             position: relative;
-            padding-left: 25px;
+            padding-left: 20px;
         }
 
         .research-interests li::before {
-            content: '🔬';
+            content: '•';
             position: absolute;
             left: 0;
+            color: #2c3e50;
+            font-weight: bold;
         }
 
         /* News Section */
@@ -224,7 +220,7 @@
 
         .news-date {
             font-weight: bold;
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 5px;
         }
 
@@ -258,7 +254,7 @@
         }
 
         .publication-journal {
-            color: #667eea;
+            color: #34495e;
             font-style: italic;
             margin-bottom: 5px;
         }
@@ -268,18 +264,13 @@
         }
 
         .publication-links a {
-            color: #667eea;
-            text-decoration: none;
+            color: #2c3e50;
+            text-decoration: underline;
             margin-right: 15px;
-            padding: 5px 10px;
-            border-radius: 15px;
-            background: #f0f2ff;
-            transition: all 0.3s ease;
         }
 
         .publication-links a:hover {
-            background: #667eea;
-            color: white;
+            color: #34495e;
         }
 
         /* Projects */
@@ -287,8 +278,8 @@
             margin-bottom: 30px;
             padding: 25px;
             background: #f8f9fa;
-            border-radius: 10px;
-            border-left: 4px solid #667eea;
+            border: 1px solid #e0e0e0;
+            border-left: 4px solid #2c3e50;
         }
 
         .project-title {
@@ -312,23 +303,12 @@
         .project-images img {
             max-width: 200px;
             height: auto;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
         }
 
         .project-images a:hover img {
-            transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
-        }
-
-        .profile-image {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        a:hover .profile-image {
-            transform: scale(1.05);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            opacity: 0.9;
         }
 
         /* Awards and Activities */
@@ -345,7 +325,7 @@
         }
 
         .award-date, .activity-date {
-            color: #667eea;
+            color: #2c3e50;
             font-weight: bold;
             min-width: 100px;
         }
@@ -366,26 +346,19 @@
         .contact-card {
             background: #f8f9fa;
             padding: 25px;
-            border-radius: 10px;
             text-align: center;
-            border: 2px solid #e9ecef;
-            transition: all 0.3s ease;
-        }
-
-        .contact-card:hover {
-            border-color: #667eea;
-            transform: translateY(-5px);
+            border: 1px solid #e0e0e0;
         }
 
         .contact-card h4 {
-            color: #667eea;
+            color: #2c3e50;
             margin-bottom: 15px;
+            font-weight: 600;
         }
 
         .contact-card a {
-            color: #667eea;
-            text-decoration: none;
-            font-weight: 500;
+            color: #2c3e50;
+            text-decoration: underline;
         }
 
         .contact-card a:hover {
@@ -465,12 +438,12 @@
         }
 
         .news-container::-webkit-scrollbar-thumb {
-            background: #667eea;
+            background: #2c3e50;
             border-radius: 3px;
         }
 
         .news-container::-webkit-scrollbar-thumb:hover {
-            background: #5a6fd8;
+            background: #34495e;
         }
     </style>
 </head>
@@ -489,9 +462,9 @@
                     </div>
                 </div>
                 <div class="contact-info">
-                    <a href="mailto:yangfan.yang@connect.polyu.hk">📧 yangfan.yang@connect.polyu.hk</a>
-                    <a href="https://orcid.org/0000-0002-2482-7884">🔗 ORCID Profile</a>
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ">📚 Google Scholar</a>
+                    <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
+                    <a href="https://orcid.org/0000-0002-2482-7884">ORCID Profile</a>
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ">Google Scholar</a>
                 </div>
             </div>
             <nav>
@@ -539,11 +512,11 @@
                 <h2>Latest News</h2>
                 <div class="news-grid">
                     <div>
-                        <h3>📰 Publication News</h3>
+                        <h3>Publication News</h3>
                         <div class="news-container" id="publication-news"></div>
                     </div>
                     <div>
-                        <h3>🎉 Recent Achievements</h3>
+                        <h3>Recent Achievements</h3>
                         <div class="news-container" id="happened-news"></div>
                     </div>
                 </div>
@@ -615,8 +588,8 @@
                 </div>
 
                 <p style="margin-top: 30px;">
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ" style="color: #667eea; text-decoration: none; font-weight: bold;">
-                        📚 View Complete Publication List on Google Scholar
+                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ" style="color: #2c3e50; text-decoration: underline; font-weight: 600;">
+                        View Complete Publication List on Google Scholar
                     </a>
                 </p>
             </section>
@@ -629,7 +602,7 @@
                     <div class="project-title">Gas Pipe Diagnostic Technology Development</div>
                     <div class="project-description">
                         Algorithm development and GUI design for ultrasound inspection in project "Development of Gas Pipe Diagnostic Technology by Nondestructive Thermographic and Ultrasonic Methods" (PRP/014/19FX, ZM34), 2021-2022, PolyU. 
-                        <a href="https://doi.org/10.3390/rs15030599" style="color: #667eea; text-decoration: none; font-weight: 500;">Related Publication: Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model (Remote Sensing, 2024)</a>
+                        <a href="https://doi.org/10.3390/rs15030599" style="color: #2c3e50; text-decoration: underline; font-weight: 500;">Related Publication: Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model (Remote Sensing, 2024)</a>
                     </div>
                     <div class="project-images">
                         <a href="https://doi.org/10.3390/rs15030599" style="text-decoration: none;">
@@ -662,7 +635,7 @@
                     <div class="project-title">AI-based Environmental Perception System</div>
                     <div class="project-description">
                         Development of an intelligent monitoring system for indoor health assessment utilizing AI-based environmental perception technologies. Funded under the HKSTP Pre-incubation Programme (IDEATION), with a grant of HK$100,000. Project initiated: May 11, 2023.
-                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #667eea; text-decoration: none; font-weight: 500; margin-left: 10px;">Programme Details</a>
+                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">Programme Details</a>
                     </div>
                 </div>
             </section>
@@ -671,12 +644,12 @@
             <section id="awards" class="section fade-in">
                 <h2>Awards & Recognition</h2>
                 
-                <h3>🏆 Competitions and Awards</h3>
+                <h3>Competitions and Awards</h3>
                 <div class="award-item">
                     <div class="award-date">May 2025</div>
                     <div class="award-description">
                         <strong>MicroFund Awardee</strong> - Recognized as a top performer in the MicroFund program at Hong Kong Polytechnic University
-                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #667eea; margin-left: 10px;">View Programme Details</a>
+                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">View Programme Details</a>
                     </div>
                 </div>
 
@@ -701,12 +674,12 @@
                     </div>
                 </div>
 
-                <h3>🎯 Academic Activities</h3>
+                <h3>Academic Activities</h3>
                 <div class="activity-item">
                     <div class="activity-date">2024</div>
                     <div class="activity-description">
                         <strong>Session Chair</strong> - 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE, Hong Kong
-                        <a href="Session_Chair_Fan_Yang.pdf" style="color: #667eea; margin-left: 10px;">View Certification</a>
+                        <a href="Session_Chair_Fan_Yang.pdf" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">View Certification</a>
                     </div>
                 </div>
 
@@ -730,20 +703,20 @@
                 <h2>Contact Information</h2>
                 <div class="contact-grid">
                     <div class="contact-card">
-                        <h4>📧 Email</h4>
+                        <h4>Email</h4>
                         <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
                     </div>
                     <div class="contact-card">
-                        <h4>🏢 Institution</h4>
+                        <h4>Institution</h4>
                         <p>Hong Kong Polytechnic University<br>11 Yuk Choi Road, Hung Hom</p>
                     </div>
                     <div class="contact-card">
-                        <h4>🔗 Academic Profiles</h4>
+                        <h4>Academic Profiles</h4>
                         <a href="https://orcid.org/0000-0002-2482-7884">ORCID</a><br>
                         <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ">Google Scholar</a>
                     </div>
                     <div class="contact-card">
-                        <h4>📚 Thesis</h4>
+                        <h4>Thesis</h4>
                         <a href="https://theses.lib.polyu.edu.hk/handle/200/13144">PhD Thesis</a>
                     </div>
                 </div>
@@ -753,7 +726,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Dr. Fan Yang. All rights reserved. | AI & Ultrasound Research</p>
+            <p>&copy; 2025 Dr. Fan Yang. All rights reserved.</p>
         </div>
     </footer>
 
