@@ -314,6 +314,21 @@
             height: auto;
             border-radius: 8px;
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-images a:hover img {
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+        .profile-image {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        a:hover .profile-image {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
         }
 
         /* Awards and Activities */
@@ -464,7 +479,9 @@
         <div class="container">
             <div class="header-content">
                 <div class="profile-section">
-                    <img src="profile.jpg" alt="Dr. Fan Yang" class="profile-image" onerror="this.style.display='none'">
+                    <a href="https://orcid.org/0000-0002-2482-7884" style="text-decoration: none; display: inline-block;">
+                        <img src="profile.jpg" alt="Dr. Fan Yang" class="profile-image" onerror="this.style.display='none'" style="cursor: pointer;">
+                    </a>
                     <div class="profile-info">
                         <h1>Dr. Fan Yang</h1>
                         <div class="title">Postdoctoral Fellow</div>
@@ -497,21 +514,21 @@
                 <h2>About Me</h2>
                 <div class="about-content">
                     <div class="about-text">
-                        <p>I am a Postdoctoral Fellow at the Hong Kong Polytechnic University, specializing in AI-powered ultrasound applications and intelligent monitoring systems. My research focuses on developing innovative algorithms for battery health monitoring, gas pipe diagnostics, and AI-enhanced remote health monitoring systems.</p>
+                        <p>Dr. Fan Yang is a Postdoctoral Fellow at the Hong Kong Polytechnic University, specializing in artificial intelligence-powered ultrasound applications and intelligent monitoring systems. His research program encompasses the development of advanced algorithmic frameworks for battery health monitoring, non-destructive testing methodologies for gas pipe diagnostics, and AI-enhanced remote health monitoring systems.</p>
                         
-                        <p>I received my Master's and Ph.D. degrees from the Hong Kong Polytechnic University, where I developed expertise in system monitoring optimization and practical algorithm applications. My work bridges the gap between theoretical research and real-world implementation, with a strong emphasis on applying mathematical and algorithmic solutions to solve practical problems.</p>
+                        <p>Dr. Yang received his Master's and Ph.D. degrees from the Hong Kong Polytechnic University, where he developed expertise in system monitoring optimization and computational algorithm applications. His research bridges the gap between theoretical foundations and practical implementation, with a particular emphasis on the application of mathematical modeling and algorithmic solutions to address real-world engineering challenges.</p>
                         
-                        <p>My research philosophy centers on "Apply algorithm and math in Life" - transforming complex theoretical concepts into practical solutions that benefit society through improved healthcare monitoring, energy storage systems, and industrial diagnostics.</p>
+                        <p>His research philosophy centers on the translation of complex theoretical concepts into practical solutions that benefit society through improved healthcare monitoring, energy storage systems, and industrial diagnostics. Dr. Yang's work has been published in leading journals including Applied Energy, Journal of Energy Storage, and Remote Sensing.</p>
                     </div>
                     <div class="research-interests">
                         <h4>Research Interests</h4>
                         <ul>
-                            <li>AI-Powered Ultrasound Applications</li>
-                            <li>Battery Health Monitoring</li>
-                            <li>Intelligent System Monitoring</li>
-                            <li>Kalman Filtering & Signal Processing</li>
-                            <li>Machine Learning in Healthcare</li>
-                            <li>Non-destructive Testing</li>
+                            <li>Artificial Intelligence-Powered Ultrasound Applications</li>
+                            <li>Battery Health Monitoring & State Estimation</li>
+                            <li>Intelligent System Monitoring & Optimization</li>
+                            <li>Kalman Filtering & Advanced Signal Processing</li>
+                            <li>Machine Learning Applications in Healthcare</li>
+                            <li>Non-destructive Testing & Evaluation</li>
                         </ul>
                     </div>
                 </div>
@@ -538,10 +555,10 @@
                 <div class="research-interests">
                     <h4>Core Research Areas</h4>
                     <ul>
-                        <li><strong>Data Analysis:</strong> Advanced signal processing through Kalman filtering and Hilbert-Huang Transform (HHT)</li>
-                        <li><strong>Intelligent Algorithms:</strong> Development of AI algorithms for ultrasonic and battery health monitoring applications</li>
-                        <li><strong>Ultrasound Applications:</strong> Industrial and medical imaging applications with focus on real-time diagnostics</li>
-                        <li><strong>System Optimization:</strong> Monitoring optimization for industrial and healthcare systems</li>
+                        <li><strong>Signal Processing & Data Analysis:</strong> Advanced signal processing methodologies utilizing Kalman filtering techniques and Hilbert-Huang Transform (HHT) for time-frequency analysis</li>
+                        <li><strong>Intelligent Algorithm Development:</strong> Design and implementation of artificial intelligence algorithms for ultrasonic non-destructive testing and battery health monitoring applications</li>
+                        <li><strong>Ultrasound Applications:</strong> Industrial and medical imaging applications with emphasis on real-time diagnostic capabilities and automated defect detection</li>
+                        <li><strong>System Optimization:</strong> Development of optimization frameworks for monitoring systems in industrial and healthcare domains</li>
                     </ul>
                 </div>
             </section>
@@ -611,18 +628,23 @@
                 <div class="project-item">
                     <div class="project-title">Gas Pipe Diagnostic Technology Development</div>
                     <div class="project-description">
-                        Algorithm development and GUI design for ultrasound inspection in project "Development of Gas Pipe Diagnostic Technology by Nondestructive Thermographic and Ultrasonic Methods" (PRP/014/19FX, ZM34), 2021-2022, PolyU
+                        Algorithm development and GUI design for ultrasound inspection in project "Development of Gas Pipe Diagnostic Technology by Nondestructive Thermographic and Ultrasonic Methods" (PRP/014/19FX, ZM34), 2021-2022, PolyU. 
+                        <a href="https://doi.org/10.3390/rs15030599" style="color: #667eea; text-decoration: none; font-weight: 500;">Related Publication: Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model (Remote Sensing, 2024)</a>
                     </div>
                     <div class="project-images">
-                        <img src="Gifproject.gif" alt="Gas Pipe Diagnostic Project" />
-                        <img src="Experimentsetup2.png" alt="Experimental Setup" />
+                        <a href="https://doi.org/10.3390/rs15030599" style="text-decoration: none;">
+                            <img src="Gifproject.gif" alt="Gas Pipe Diagnostic Project" style="cursor: pointer;" />
+                        </a>
+                        <a href="https://doi.org/10.3390/rs15030599" style="text-decoration: none;">
+                            <img src="Experimentsetup2.png" alt="Experimental Setup" style="cursor: pointer;" />
+                        </a>
                     </div>
                 </div>
 
                 <div class="project-item">
                     <div class="project-title">Seebeck Coefficient/Electric Resistance Measuring System</div>
                     <div class="project-description">
-                        Algorithm development and GUI design for advanced measurement systems, 2022, HKPolyU
+                        Algorithm development and GUI design for advanced measurement systems, 2022, HKPolyU. This system enables precise measurement of thermoelectric properties for materials characterization.
                     </div>
                     <div class="project-images">
                         <img src="Temperature.gif" alt="Temperature Measurement System" />
@@ -632,14 +654,15 @@
                 <div class="project-item">
                     <div class="project-title">AIoT Aquaponics System Development</div>
                     <div class="project-description">
-                        Developed AIoT aquaponics system and provided educational lessons to students, 2022, VINCI AI
+                        Development and implementation of an AIoT (Artificial Intelligence of Things) aquaponics system with integrated educational modules for student engagement. Collaboration with VINCI AI, 2022.
                     </div>
                 </div>
 
                 <div class="project-item">
                     <div class="project-title">AI-based Environmental Perception System</div>
                     <div class="project-description">
-                        Monitoring of indoor health with AI-based environmental perception system, HKSTP Pre-incubation Programme (IDEATION), 100k $, 2023.05.11
+                        Development of an intelligent monitoring system for indoor health assessment utilizing AI-based environmental perception technologies. Funded under the HKSTP Pre-incubation Programme (IDEATION), with a grant of HK$100,000. Project initiated: May 11, 2023.
+                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #667eea; text-decoration: none; font-weight: 500; margin-left: 10px;">Programme Details</a>
                     </div>
                 </div>
             </section>
@@ -652,22 +675,22 @@
                 <div class="award-item">
                     <div class="award-date">May 2025</div>
                     <div class="award-description">
-                        <strong>MicroFund Awardee</strong> - Selected as top performer in MicroFund program
-                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #667eea; margin-left: 10px;">View Details</a>
+                        <strong>MicroFund Awardee</strong> - Recognized as a top performer in the MicroFund program at Hong Kong Polytechnic University
+                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #667eea; margin-left: 10px;">View Programme Details</a>
                     </div>
                 </div>
 
                 <div class="award-item">
                     <div class="award-date">May 2023</div>
                     <div class="award-description">
-                        <strong>AI-based Environmental Perception System</strong> - Shortlisted as outstanding team during Final Screening (POC-23(1)-013)
+                        <strong>AI-based Environmental Perception System</strong> - Shortlisted as an outstanding team during the Final Screening phase of the Proof-of-Concept Programme (POC-23(1)-013)
                     </div>
                 </div>
 
                 <div class="award-item">
                     <div class="award-date">2023</div>
                     <div class="award-description">
-                        <strong>Dr. Winnie S M Tang-PolyU Student Innovation & Entrepreneurship Scholarship</strong> - 20k $ award
+                        <strong>Dr. Winnie S M Tang-PolyU Student Innovation & Entrepreneurship Scholarship</strong> - Awarded HK$20,000 in recognition of innovation and entrepreneurship excellence
                     </div>
                 </div>
 
@@ -683,7 +706,7 @@
                     <div class="activity-date">2024</div>
                     <div class="activity-description">
                         <strong>Session Chair</strong> - 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE, Hong Kong
-                        <a href="Session_Chair_Fan_Yang.pdf" style="color: #667eea; margin-left: 10px;">Certification</a>
+                        <a href="Session_Chair_Fan_Yang.pdf" style="color: #667eea; margin-left: 10px;">View Certification</a>
                     </div>
                 </div>
 
