@@ -14,6 +14,7 @@ import os
 import sys
 import time
 import subprocess
+import traceback
 
 # Google Scholar profile URL
 SCHOLAR_URL = "https://scholar.google.com/citations?user=FDrOozwAAAAJ&hl=zh-TW"
@@ -330,50 +331,59 @@ def main():
     print(f"URL: {SCHOLAR_URL}")
     print()
     
-    # Fetch publications from Google Scholar
-    publications = fetch_scholar_publications()
-    
-    if not publications:
-        print("ERROR: No publications found or error occurred")
-        print("This could be due to:")
-        print("1. Google Scholar blocking the request")
-        print("2. Network issues")
-        print("3. Changes in Google Scholar's HTML structure")
-        print("\nTrying to install scholarly library for better results...")
-        
-        # Try to install scholarly
-        try:
-            subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'scholarly', '--quiet'])
-            print("Installed scholarly library, retrying...")
-            publications = fetch_scholar_publications()
-        except:
-            print("Could not install scholarly library automatically")
+    try:
+        # Fetch publications from Google Scholar
+        publications = fetch_scholar_publications()
         
         if not publications:
+            print("WARNING: No publications found or error occurred")
+            print("This could be due to:")
+            print("1. Google Scholar blocking the request")
+            print("2. Network issues")
+            print("3. Changes in Google Scholar's HTML structure")
+            print("\nTrying to install scholarly library for better results...")
+            
+            # Try to install scholarly
+            try:
+                subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'scholarly', '--quiet'], 
+                                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+                print("Installed scholarly library, retrying...")
+                publications = fetch_scholar_publications()
+            except Exception as e:
+                print(f"Could not install scholarly library: {e}")
+            
+            if not publications:
+                print("No publications found. Exiting without updating website.")
+                print("This is not an error - the script will retry on the next scheduled run.")
+                return 0  # Return 0 to not fail the workflow
+        
+        print(f"✓ Found {len(publications)} publications")
+        
+        # Display first few publications
+        print("\nSample publications:")
+        for i, pub in enumerate(publications[:3], 1):
+            print(f"  {i}. {pub.get('title', 'N/A')[:60]}... ({pub.get('year', 'N/A')})")
+        
+        # Update HTML file
+        html_file = 'index.html'
+        if not os.path.exists(html_file):
+            print(f"ERROR: {html_file} not found in current directory")
             return 1
-    
-    print(f"✓ Found {len(publications)} publications")
-    
-    # Display first few publications
-    print("\nSample publications:")
-    for i, pub in enumerate(publications[:3], 1):
-        print(f"  {i}. {pub.get('title', 'N/A')[:60]}... ({pub.get('year', 'N/A')})")
-    
-    # Update HTML file
-    html_file = 'index.html'
-    if not os.path.exists(html_file):
-        print(f"ERROR: {html_file} not found in current directory")
-        return 1
-    
-    print(f"\nUpdating {html_file}...")
-    success = update_html_file(html_file, publications, max_publications=10)
-    
-    if success:
-        print(f"✓ Successfully updated {html_file}")
-        print(f"  Added/updated {min(10, len(publications))} publications")
-        return 0
-    else:
-        print("ERROR: Failed to update HTML file")
+        
+        print(f"\nUpdating {html_file}...")
+        success = update_html_file(html_file, publications, max_publications=10)
+        
+        if success:
+            print(f"✓ Successfully updated {html_file}")
+            print(f"  Added/updated {min(10, len(publications))} publications")
+            return 0
+        else:
+            print("ERROR: Failed to update HTML file")
+            return 1
+            
+    except Exception as e:
+        print(f"Unexpected error in main(): {e}")
+        traceback.print_exc()
         return 1
 
 if __name__ == '__main__':

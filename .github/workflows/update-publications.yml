@@ -30,8 +30,10 @@ jobs:
         pip install -r requirements.txt
     
     - name: Update publications
+      id: update-pub
       run: |
         python update_publications.py
+        echo "exit_code=$?" >> $GITHUB_OUTPUT
       env:
         SCHOLAR_USER_ID: FDrOozwAAAAJ
       continue-on-error: true
@@ -39,11 +41,18 @@ jobs:
     - name: Check for changes
       id: verify-changed-files
       run: |
-        git diff --exit-code index.html || echo "changed=true" >> $GITHUB_OUTPUT
-        if [ -z "$(git status --porcelain)" ]; then
-          echo "changed=false" >> $GITHUB_OUTPUT
+        if [ -f index.html ]; then
+          if [ -n "$(git diff --name-only index.html 2>/dev/null)" ] || [ -n "$(git status --porcelain index.html 2>/dev/null)" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "Changes detected in index.html"
+            git diff --stat index.html || true
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "No changes detected in index.html"
+          fi
         else
-          echo "changed=true" >> $GITHUB_OUTPUT
+          echo "changed=false" >> $GITHUB_OUTPUT
+          echo "index.html not found"
         fi
     
     - name: Commit and push changes
@@ -52,6 +61,8 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add index.html
-        git commit -m "Auto-update: Sync publications from Google Scholar [$(date +'%Y-%m-%d %H:%M:%S UTC')]" || exit 0
-        git push
+        git commit -m "Auto-update: Sync publications from Google Scholar [$(date -u +'%Y-%m-%d %H:%M:%S UTC')]" || exit 0
+        git push origin main || exit 0
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
