@@ -1,859 +1,235 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Fan Yang - AI & Ultrasound Research</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            line-height: 1.8;
-            color: #2c3e50;
-            background: #fafafa;
-            min-height: 100vh;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header */
-        header {
-            background: #2c3e50;
-            color: white;
-            padding: 2rem 0;
-            border-bottom: 3px solid #34495e;
-        }
-
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-        }
-
-        .profile-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .profile-image {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid white;
-            object-fit: cover;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-        }
-
-        .profile-info h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 700;
-        }
-
-        .profile-info .title {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            margin-bottom: 5px;
-        }
-
-        .profile-info .affiliation {
-            font-size: 1rem;
-            opacity: 0.8;
-        }
-
-        .contact-info {
-            text-align: right;
-        }
-
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            margin: 5px 0;
-            transition: opacity 0.3s ease;
-        }
-
-        .contact-info a:hover {
-            opacity: 0.8;
-        }
-
-        /* Navigation */
-        nav {
-            background: #34495e;
-            padding: 1rem 0;
-            margin-top: 20px;
-        }
-
-        nav ul {
-            display: flex;
-            justify-content: center;
-            list-style: none;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-            padding: 10px 20px;
-        }
-
-        nav a:hover, nav a.current {
-            background: #2c3e50;
-        }
-
-        /* Main Content */
-        main {
-            padding: 40px 0;
-        }
-
-        .section {
-            background: white;
-            margin-bottom: 30px;
-            padding: 40px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-
-        .section h2 {
-            color: #2c3e50;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #2c3e50;
-            display: inline-block;
-            font-weight: 600;
-        }
-
-        .section h3 {
-            color: #34495e;
-            font-size: 1.5rem;
-            margin: 25px 0 15px 0;
-            font-weight: 600;
-        }
-
-        /* About Section */
-        .about-content {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 40px;
-            align-items: start;
-        }
-
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-
-        .research-interests {
-            background: #f8f9fa;
-            padding: 25px;
-            border: 1px solid #e0e0e0;
-            border-left: 4px solid #2c3e50;
-        }
-
-        .research-interests h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .research-interests ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .research-interests li {
-            padding: 8px 0;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .research-interests li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: #2c3e50;
-            font-weight: bold;
-        }
-
-        /* News Section */
-        .news-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .news-container {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 20px;
-            max-height: 300px;
-            overflow-y: auto;
-            border: 1px solid #e9ecef;
-        }
-
-        .news-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #dee2e6;
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .news-item:last-child {
-            border-bottom: none;
-        }
-
-        .news-date {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 5px;
-        }
-
-        .news-description {
-            color: #555;
-        }
-
-        /* Publications */
-        .publication-item {
-            padding: 20px 0;
-            border-bottom: 1px solid #eee;
-            transition: background-color 0.3s ease;
-        }
-
-        .publication-item:hover {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 0 -20px;
-        }
-
-        .publication-item:last-child {
-            border-bottom: none;
-        }
-
-        .publication-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 8px;
-            font-size: 1.05rem;
-        }
-
-        .publication-journal {
-            color: #34495e;
-            font-style: italic;
-            margin-bottom: 5px;
-        }
-
-        .publication-links {
-            margin-top: 10px;
-        }
-
-        .publication-links a {
-            color: #2c3e50;
-            text-decoration: underline;
-            margin-right: 15px;
-        }
-
-        .publication-links a:hover {
-            color: #34495e;
-        }
-
-        /* Projects */
-        .project-item {
-            margin-bottom: 30px;
-            padding: 25px;
-            background: #f8f9fa;
-            border: 1px solid #e0e0e0;
-            border-left: 4px solid #2c3e50;
-        }
-
-        .project-title {
-            font-weight: bold;
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .project-description {
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .project-images {
-            display: flex;
-            gap: 15px;
-            flex-wrap: wrap;
-        }
-
-        .project-images img {
-            max-width: 200px;
-            height: auto;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-
-        .project-images a:hover img {
-            opacity: 0.9;
-        }
-
-        /* Awards and Activities */
-        .award-item, .activity-item {
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .award-item:last-child, .activity-item:last-child {
-            border-bottom: none;
-        }
-
-        .award-date, .activity-date {
-            color: #2c3e50;
-            font-weight: bold;
-            min-width: 100px;
-        }
-
-        .award-description, .activity-description {
-            flex: 1;
-            margin-left: 20px;
-        }
-
-        /* Contact Section */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
-        }
-
-        .contact-card {
-            background: #f8f9fa;
-            padding: 25px;
-            text-align: center;
-            border: 1px solid #e0e0e0;
-        }
-
-        .contact-card h4 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .contact-card a {
-            color: #2c3e50;
-            text-decoration: underline;
-        }
-
-        .contact-card a:hover {
-            text-decoration: underline;
-        }
-
-        /* Footer */
-        footer {
-            background: #2c3e50;
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-            margin-top: 50px;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .header-content {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .contact-info {
-                text-align: center;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-            }
-
-            .news-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .project-images {
-                flex-direction: column;
-            }
-
-            .award-item, .activity-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .award-date, .activity-date {
-                margin-bottom: 10px;
-            }
-
-            .award-description, .activity-description {
-                margin-left: 0;
-            }
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeInUp 0.6s ease-out;
-        }
-
-        /* Scrollbar Styling */
-        .news-container::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .news-container::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 3px;
-        }
-
-        .news-container::-webkit-scrollbar-thumb {
-            background: #2c3e50;
-            border-radius: 3px;
-        }
-
-        .news-container::-webkit-scrollbar-thumb:hover {
-            background: #34495e;
-        }
-    </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Dr. Fan Yang — AI · Ultrasound · Intelligent Sensing</title>
+<meta name="description" content="Fan Yang — AI-powered ultrasound, battery health monitoring (SoC/SoH), intelligent sensing and gerontechnology." />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2748%27 fill=%27%23667eea%27/%3E%3Ctext x=%2750%27 y=%2758%27 font-size=%2755%27 text-anchor=%27middle%27 fill=%27%23fff%27 font-family=%27Segoe UI%2C Arial%2C sans-serif%27%3EF%3C/text%3E%3C/svg%3E">
+<meta property="og:title" content="Dr. Fan Yang — AI · Ultrasound · Intelligent Sensing" />
+<meta property="og:description" content="AI-powered ultrasound, battery diagnostics, intelligent sensing." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://your-domain.example" />
+<meta name="color-scheme" content="light dark" />
+<style>
+  :root{
+    --bg:#0b1220;--panel:#0e172a;--text:#dbe4ff;--muted:#9db2f9;--accent:#7c3aed;--grad1:#667eea;--grad2:#7c3aed;--chip:#111827;
+    --shadow:0 10px 30px rgba(0,0,0,.25);
+  }
+  @media (prefers-color-scheme: light){
+    :root{--bg:#fafafa;--panel:#ffffff;--text:#1f2937;--muted:#4b5563;--accent:#7c3aed;--chip:#eef2ff;--shadow:0 12px 30px rgba(0,0,0,.08);}
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    background:
+      radial-gradient(1200px 600px at 15% -10%, rgba(124,58,237,.18), transparent 60%),
+      radial-gradient(900px 500px at 90% 10%, rgba(102,126,234,.18), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    line-height:1.65;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:28px 20px 80px}
+  header{
+    position:sticky;top:0;z-index:20;backdrop-filter:saturate(140%) blur(10px);
+    background:linear-gradient(180deg, rgba(11,18,32,.85), rgba(11,18,32,.65));
+    border-bottom:1px solid rgba(255,255,255,.06);
+  }
+  .nav{display:flex;align-items:center;gap:18px;justify-content:space-between;padding:14px 0;}
+  .brand{display:flex;align-items:center;gap:14px}
+  .brand img{width:44px;height:44px;border-radius:12px;box-shadow:var(--shadow)}
+  .brand h1{font-size:18px;margin:0;font-weight:700;letter-spacing:.2px}
+  .nav a{color:var(--text);text-decoration:none;opacity:.8;padding:8px 12px;border-radius:8px}
+  .nav a:hover{opacity:1;background:rgba(255,255,255,.06)}
+  .toggle{border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--text);padding:8px 12px;border-radius:10px;cursor:pointer}
+  .hero{
+    display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;margin-top:26px;
+  }
+  .card{
+    background:linear-gradient(160deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;padding:24px;box-shadow:var(--shadow);
+  }
+  .badge{display:inline-flex;gap:6px;align-items:center;font-size:12px;color:var(--muted);
+    background:linear-gradient(90deg, rgba(124,58,237,.12), rgba(102,126,234,.12));
+    border:1px solid rgba(124,58,237,.25); padding:6px 10px;border-radius:999px}
+  .cta{display:inline-block;margin-top:16px;background:linear-gradient(90deg,var(--grad1),var(--grad2));
+    color:#fff;text-decoration:none;font-weight:600;padding:12px 18px;border-radius:12px;box-shadow:var(--shadow)}
+  h2{font-size:22px;margin:0 0 12px}
+  .kgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .chip{display:inline-block;background:var(--chip);padding:8px 12px;border-radius:999px;font-size:13px;margin:6px 6px 0 0}
+  section{margin-top:36px}
+  .sec-title{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+  .sec-title span{width:8px;height:8px;border-radius:999px;background:linear-gradient(90deg,var(--grad1),var(--grad2))}
+  .list{display:grid;gap:12px}
+  .item{padding:16px;border:1px solid rgba(255,255,255,.12);border-radius:14px;background:rgba(255,255,255,.04)}
+  .item:hover{background:rgba(255,255,255,.07)}
+  .pub-title{font-weight:700}
+  .muted{color:var(--muted)}
+  footer{margin-top:48px;padding-top:18px;border-top:1px solid rgba(255,255,255,.12);opacity:.8}
+  @media (max-width:920px){.hero{grid-template-columns:1fr}.kgrid{grid-template-columns:1fr 1fr}}
+  @media (max-width:620px){.kgrid{grid-template-columns:1fr}}
+</style>
+<script type="application/ld+json">
+{
+ "@context":"https://schema.org",
+ "@type":"Person",
+ "name":"Fan Yang",
+ "jobTitle":"Postdoctoral Fellow",
+ "affiliation":{"@type":"Organization","name":"The Hong Kong Polytechnic University"},
+ "url":"https://your-domain.example",
+ "email":"yangfan.yang@connect.polyu.hk",
+ "sameAs":[
+  "https://orcid.org/0000-0002-2482-7884",
+  "https://scholar.google.com/citations?user=FDrOozwAAAAJ"
+ ]
+}
+</script>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <div class="profile-section">
-                    <a href="https://orcid.org/0000-0002-2482-7884" style="text-decoration: none; display: inline-block;">
-                        <img src="profile.jpg" alt="Dr. Fan Yang" class="profile-image" onerror="this.style.display='none'" style="cursor: pointer;">
-                    </a>
-                    <div class="profile-info">
-                        <h1>Dr. Fan Yang</h1>
-                        <div class="title">Postdoctoral Fellow</div>
-                        <div class="affiliation">Hong Kong Polytechnic University</div>
-                    </div>
-                </div>
-                <div class="contact-info">
-                    <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
-                    <a href="https://orcid.org/0000-0002-2482-7884">ORCID Profile</a>
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ">Google Scholar</a>
-                </div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#about" class="current">About</a></li>
-                    <li><a href="#research">Research</a></li>
-                    <li><a href="#publications">Publications</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#awards">Awards</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<header>
+  <div class="wrap nav">
+    <div class="brand">
+      <img src="assets/img/avatar.svg" alt="FY" />
+      <h1>Fan Yang · AI × Ultrasound</h1>
+      <span class="badge">Postdoctoral Fellow — PolyU</span>
+    </div>
+    <nav style="display:flex;gap:8px;align-items:center">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#news">News</a>
+      <a href="#publications">Publications</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <button id="theme" class="toggle" title="Toggle theme">🌗</button>
+    </nav>
+  </div>
+</header>
 
-    <main>
-        <div class="container">
-            <!-- About Section -->
-            <section id="about" class="section fade-in">
-                <h2>About Me</h2>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Dr. Fan Yang is a Postdoctoral Fellow at the Hong Kong Polytechnic University, specializing in artificial intelligence-powered ultrasound applications and intelligent monitoring systems. His research program encompasses the development of advanced algorithmic frameworks for battery health monitoring, non-destructive testing methodologies for gas pipe diagnostics, and AI-enhanced remote health monitoring systems.</p>
-                        
-                        <p>Dr. Yang received his Master's and Ph.D. degrees from the Hong Kong Polytechnic University, where he developed expertise in system monitoring optimization and computational algorithm applications. His research bridges the gap between theoretical foundations and practical implementation, with a particular emphasis on the application of mathematical modeling and algorithmic solutions to address real-world engineering challenges.</p>
-                        
-                        <p>His research philosophy centers on the translation of complex theoretical concepts into practical solutions that benefit society through improved healthcare monitoring, energy storage systems, and industrial diagnostics. Dr. Yang's work has been published in leading journals including Applied Energy, Journal of Energy Storage, and Remote Sensing.</p>
-                    </div>
-                    <div class="research-interests">
-                        <h4>Research Interests</h4>
-                        <ul>
-                            <li>Artificial Intelligence-Powered Ultrasound Applications</li>
-                            <li>Battery Health Monitoring & State Estimation</li>
-                            <li>Intelligent System Monitoring & Optimization</li>
-                            <li>Kalman Filtering & Advanced Signal Processing</li>
-                            <li>Machine Learning Applications in Healthcare</li>
-                            <li>Non-destructive Testing & Evaluation</li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
+<main class="wrap">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="card">
+      <h2 style="font-size:28px;letter-spacing:.2px;margin-bottom:6px">AI-Powered Ultrasound & Intelligent Sensing</h2>
+      <p class="muted">I build physics-informed AI for ultrasound and multi-sensor systems: battery SoC/SoH estimation, remote vascular screening, and gerontechnology. My work blends signal processing, learning theory, and deployable devices.</p>
+      <div style="margin-top:12px">
+        <span class="chip">Ultrasound NDT</span>
+        <span class="chip">SoC/SoH</span>
+        <span class="chip">Physics-informed ML</span>
+        <span class="chip">Edge AI</span>
+      </div>
+      <a class="cta" href="mailto:yangfan.yang@connect.polyu.hk">Contact</a>
+    </div>
+    <div class="card">
+      <div class="sec-title"><span></span><h2>Quick Links</h2></div>
+      <div class="kgrid">
+        <a class="item" href="https://orcid.org/0000-0002-2482-7884" target="_blank" rel="noreferrer">
+          <div class="pub-title">ORCID</div><div class="muted">0000-0002-2482-7884</div>
+        </a>
+        <a class="item" href="https://scholar.google.com/citations?user=FDrOozwAAAAJ" target="_blank" rel="noreferrer">
+          <div class="pub-title">Google Scholar</div><div class="muted">Publications & citations</div>
+        </a>
+        <a class="item" href="paper/elsarticle/main.pdf" target="_blank">
+          <div class="pub-title">Latest PDF</div><div class="muted">Draft preview (if available)</div>
+        </a>
+      </div>
+    </div>
+  </section>
 
-            <!-- News Section -->
-            <section class="section fade-in">
-                <h2>Latest News</h2>
-                <div class="news-grid">
-                    <div>
-                        <h3>Publication News</h3>
-                        <div class="news-container" id="publication-news"></div>
-                    </div>
-                    <div>
-                        <h3>Recent Achievements</h3>
-                        <div class="news-container" id="happened-news"></div>
-                    </div>
-                </div>
-            </section>
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="sec-title"><span></span><h2>About</h2></div>
+    <div class="item">
+      Dr. Fan Yang is a Postdoctoral Fellow at PolyU. He develops AI-assisted ultrasound methods and intelligent sensing systems for battery diagnostics and remote health. His publications include <em>Applied Energy</em>, <em>Journal of Energy Storage</em>, and <em>Remote Sensing</em>.
+    </div>
+  </section>
 
-            <!-- Research Section -->
-            <section id="research" class="section fade-in">
-                <h2>Research Focus</h2>
-                <div class="research-interests">
-                    <h4>Core Research Areas</h4>
-                    <ul>
-                        <li><strong>Signal Processing & Data Analysis:</strong> Advanced signal processing methodologies utilizing Kalman filtering techniques and Hilbert-Huang Transform (HHT) for time-frequency analysis</li>
-                        <li><strong>Intelligent Algorithm Development:</strong> Design and implementation of artificial intelligence algorithms for ultrasonic non-destructive testing and battery health monitoring applications</li>
-                        <li><strong>Ultrasound Applications:</strong> Industrial and medical imaging applications with emphasis on real-time diagnostic capabilities and automated defect detection</li>
-                        <li><strong>System Optimization:</strong> Development of optimization frameworks for monitoring systems in industrial and healthcare domains</li>
-                    </ul>
-                </div>
-            </section>
+  <!-- FOCUS -->
+  <section id="focus">
+    <div class="sec-title"><span></span><h2>Research Focus</h2></div>
+    <div class="kgrid">
+      <div class="item"><div class="pub-title">Battery Diagnostics</div><div class="muted">Ultrasound-guided SoC/SoH, TOF/dispersion features, EKF/Bayesian fusion.</div></div>
+      <div class="item"><div class="pub-title">Remote Vascular Screening</div><div class="muted">Edge AI, interpretable signal pipelines, low-cost probes for communities.</div></div>
+      <div class="item"><div class="pub-title">Physics-Informed Learning</div><div class="muted">Biot/poroelastic priors, multi-path beamforming, uncertainty calibration.</div></div>
+    </div>
+  </section>
 
-            <!-- Publications Section -->
-            <section id="publications" class="section fade-in">
-                <h2>Selected Publications</h2>
-                <p><em>* indicates corresponding author</em></p>
-                
-                <div class="publication-item">
-                    <div class="publication-title">Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model</div>
-                    <div class="publication-journal">Applied Energy, 2025 (IF = 11)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.apenergy.2024.125161">Read Paper</a>
-                    </div>
-                </div>
+  <!-- NEWS -->
+  <section id="news">
+    <div class="sec-title"><span></span><h2>Latest News</h2></div>
+    <div class="list" id="newsList"></div>
+  </section>
 
-                <div class="publication-item">
-                    <div class="publication-title">Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method</div>
-                    <div class="publication-journal">Journal of Energy Storage, 2024 (IF = 9.8)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.est.2024.113391">Read Paper</a>
-                        <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.est.2024.113391&theme=plum-sciencedirect-theme&hideUsage=true">Research News</a>
-                    </div>
-                </div>
+  <!-- PUBLICATIONS -->
+  <section id="publications">
+    <div class="sec-title"><span></span><h2>Selected Publications</h2></div>
+    <div class="list">
+      <div class="item">
+        <div class="pub-title">Real-time State-of-Charge Estimation via In-situ Ultrasound & EKF</div>
+        <div class="muted">Applied Energy, 2025.</div>
+        <a class="cta" style="padding:8px 12px;font-size:14px" href="https://doi.org/10.1016/j.apenergy.2024.125161" target="_blank" rel="noreferrer">DOI</a>
+      </div>
+      <div class="item">
+        <div class="pub-title">Joint BP Network + Ultrasonic Inspection for SoC</div>
+        <div class="muted">Journal of Energy Storage, 2024.</div>
+        <div><a class="cta" style="padding:8px 12px;font-size:14px" href="https://doi.org/10.1016/j.est.2024.113391" target="_blank">DOI</a></div>
+      </div>
+      <div class="item">
+        <div class="pub-title">Auto TOF Diagnosis via Peak-Tracking</div>
+        <div class="muted">Remote Sensing, 2024.</div>
+        <a class="cta" style="padding:8px 12px;font-size:14px" href="https://doi.org/10.3390/rs15030599" target="_blank">DOI</a>
+      </div>
+    </div>
+  </section>
 
-                <div class="publication-item">
-                    <div class="publication-title">Recent advances in ultrasound-based battery diagnostics: A reinforcement learning perspective</div>
-                    <div class="publication-journal">Sustainable Energy Technologies and Assessments, 2025 (IF = 7)</div>
-                    <div class="publication-links">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S2213138825003522">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Modified Extended Kalman Filtering Algorithm for Precise Voltage and State-of-Charge Estimations of Rechargeable Batteries</div>
-                    <div class="publication-journal">Journal of Energy Storage, 2024 (IF = 9.8)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.est.2022.105831">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model</div>
-                    <div class="publication-journal">Remote Sensing, 2024 (IF = 4)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.3390/rs15030599">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor</div>
-                    <div class="publication-journal">Sensors, 2024 (IF = 3.9)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.3390/s24185998">Read Paper</a>
-                    </div>
-                </div>
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="sec-title"><span></span><h2>Projects</h2></div>
+    <div class="list">
+      <div class="item">
+        <div class="pub-title">SonicVei&trade; — AI Remote Vascular Screening</div>
+        <div class="muted">Portable probe + on-device inference; privacy-preserving analytics.</div>
+      </div>
+      <div class="item">
+        <div class="pub-title">PIU-Net for Battery Health</div>
+        <div class="muted">Physics-informed ultrasound network; module-level health mapping.</div>
+      </div>
+    </div>
+  </section>
 
-                <p style="margin-top: 30px;">
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ" style="color: #2c3e50; text-decoration: underline; font-weight: 600;">
-                        View Complete Publication List on Google Scholar
-                    </a>
-                </p>
-            </section>
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="sec-title"><span></span><h2>Contact</h2></div>
+    <div class="kgrid">
+      <div class="item"><div class="pub-title">Email</div><div class="muted"><a href="mailto:yangfan.yang@connect.polyu.hk" style="color:inherit">yangfan.yang@connect.polyu.hk</a></div></div>
+      <div class="item"><div class="pub-title">ORCID</div><div class="muted"><a href="https://orcid.org/0000-0002-2482-7884" target="_blank" style="color:inherit">0000-0002-2482-7884</a></div></div>
+      <div class="item"><div class="pub-title">Scholar</div><div class="muted"><a href="https://scholar.google.com/citations?user=FDrOozwAAAAJ" target="_blank" style="color:inherit">Google Scholar</a></div></div>
+    </div>
+  </section>
 
-            <!-- Projects Section -->
-            <section id="projects" class="section fade-in">
-                <h2>Research Projects</h2>
-                
-                <div class="project-item">
-                    <div class="project-title">Gas Pipe Diagnostic Technology Development</div>
-                    <div class="project-description">
-                        Algorithm development and GUI design for ultrasound inspection in project "Development of Gas Pipe Diagnostic Technology by Nondestructive Thermographic and Ultrasonic Methods" (PRP/014/19FX, ZM34), 2021-2022, PolyU. 
-                        <a href="https://doi.org/10.3390/rs15030599" style="color: #2c3e50; text-decoration: underline; font-weight: 500;">Related Publication: Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model (Remote Sensing, 2024)</a>
-                    </div>
-                    <div class="project-images">
-                        <a href="https://doi.org/10.3390/rs15030599" style="text-decoration: none;">
-                            <img src="Gifproject.gif" alt="Gas Pipe Diagnostic Project" style="cursor: pointer;" />
-                        </a>
-                        <a href="https://doi.org/10.3390/rs15030599" style="text-decoration: none;">
-                            <img src="Experimentsetup2.png" alt="Experimental Setup" style="cursor: pointer;" />
-                        </a>
-                    </div>
-                </div>
+  <footer>© 2025 Fan Yang. All rights reserved.</footer>
+</main>
 
-                <div class="project-item">
-                    <div class="project-title">Seebeck Coefficient/Electric Resistance Measuring System</div>
-                    <div class="project-description">
-                        Algorithm development and GUI design for advanced measurement systems, 2022, HKPolyU. This system enables precise measurement of thermoelectric properties for materials characterization.
-                    </div>
-                    <div class="project-images">
-                        <img src="Temperature.gif" alt="Temperature Measurement System" />
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">AIoT Aquaponics System Development</div>
-                    <div class="project-description">
-                        Development and implementation of an AIoT (Artificial Intelligence of Things) aquaponics system with integrated educational modules for student engagement. Collaboration with VINCI AI, 2022.
-                    </div>
-                </div>
-
-                <div class="project-item">
-                    <div class="project-title">AI-based Environmental Perception System</div>
-                    <div class="project-description">
-                        Development of an intelligent monitoring system for indoor health assessment utilizing AI-based environmental perception technologies. Funded under the HKSTP Pre-incubation Programme (IDEATION), with a grant of HK$100,000. Project initiated: May 11, 2023.
-                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">Programme Details</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Awards Section -->
-            <section id="awards" class="section fade-in">
-                <h2>Awards & Recognition</h2>
-                
-                <h3>Competitions and Awards</h3>
-                <div class="award-item">
-                    <div class="award-date">May 2025</div>
-                    <div class="award-description">
-                        <strong>MicroFund Awardee</strong> - Recognized as a top performer in the MicroFund program at Hong Kong Polytechnic University
-                        <a href="https://www.linkedin.com/posts/polyukteo_microfund-awardees-polyu-activity-7325353634781659136-9hwc?utm_source=share&utm_medium=member_desktop&rcm=ACoAAAFIv-4BKCYXXU9FmXqzaKnE-gFfymG5CT0" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">View Programme Details</a>
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">May 2023</div>
-                    <div class="award-description">
-                        <strong>AI-based Environmental Perception System</strong> - Shortlisted as an outstanding team during the Final Screening phase of the Proof-of-Concept Programme (POC-23(1)-013)
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">2023</div>
-                    <div class="award-description">
-                        <strong>Dr. Winnie S M Tang-PolyU Student Innovation & Entrepreneurship Scholarship</strong> - Awarded HK$20,000 in recognition of innovation and entrepreneurship excellence
-                    </div>
-                </div>
-
-                <div class="award-item">
-                    <div class="award-date">2025</div>
-                    <div class="award-description">
-                        <strong>Schmidt Science Fellows 2025</strong> - Finalist
-                    </div>
-                </div>
-
-                <h3>Academic Activities</h3>
-                <div class="activity-item">
-                    <div class="activity-date">2024</div>
-                    <div class="activity-description">
-                        <strong>Session Chair</strong> - 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE, Hong Kong
-                        <a href="Session_Chair_Fan_Yang.pdf" style="color: #2c3e50; text-decoration: underline; margin-left: 10px;">View Certification</a>
-                    </div>
-                </div>
-
-                <div class="activity-item">
-                    <div class="activity-date">2023</div>
-                    <div class="activity-description">
-                        <strong>Oral Presentation</strong> - 8th International Conference on Control and Robotics Engineering (ICCRE 2023), Japan
-                    </div>
-                </div>
-
-                <div class="activity-item">
-                    <div class="activity-date">2023</div>
-                    <div class="activity-description">
-                        <strong>Oral Presentation</strong> - 60th Annual British Conference on NDT (NDT 2023), Northampton, United Kingdom
-                    </div>
-                </div>
-            </section>
-
-            <!-- Contact Section -->
-            <section id="contact" class="section fade-in">
-                <h2>Contact Information</h2>
-                <div class="contact-grid">
-                    <div class="contact-card">
-                        <h4>Email</h4>
-                        <a href="mailto:yangfan.yang@connect.polyu.hk">yangfan.yang@connect.polyu.hk</a>
-                    </div>
-                    <div class="contact-card">
-                        <h4>Institution</h4>
-                        <p>Hong Kong Polytechnic University<br>11 Yuk Choi Road, Hung Hom</p>
-                    </div>
-                    <div class="contact-card">
-                        <h4>Academic Profiles</h4>
-                        <a href="https://orcid.org/0000-0002-2482-7884">ORCID</a><br>
-                        <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ">Google Scholar</a>
-                    </div>
-                    <div class="contact-card">
-                        <h4>Thesis</h4>
-                        <a href="https://theses.lib.polyu.edu.hk/handle/200/13144">PhD Thesis</a>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Dr. Fan Yang. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // News data
-        const publicationNews = [
-            {
-                date: "August 2025",
-                description: "Manuscript titled 'Recent advances in ultrasound-based battery diagnostics: A reinforcement learning perspective' accepted in Sustainable Energy Technologies and Assessments."
-            },
-            {
-                date: "December 2024",
-                description: "Manuscript titled 'Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model' accepted in Applied Energy."
-            },
-            {
-                date: "September 2024",
-                description: "Manuscript titled 'Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method' accepted in Journal of Energy Storage."
-            },
-            {
-                date: "September 2024",
-                description: "Collaborative work titled 'Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor' accepted in Sensors."
-            }
-        ];
-
-        const happenedNews = [
-            {
-                date: "August 2025",
-                description: "Congrats for Dr. Fan YANG as the Youth Editorial Board of Electronics and Signal Processing."
-            },
-            {
-                date: "August 2025",
-                description: "Congrats our paper was accepted by Sustainable Energy Technologies and Assessments."
-            },
-            {
-                date: "May 2025",
-                description: "Congrats our project was approved as an AWARDEE in MicroFund."
-            },
-            {
-                date: "April 2025",
-                description: "Congrats our paper was promoted by Sensors."
-            },
-            {
-                date: "December 2024",
-                description: "Congrats our team was selected as Top performers teams in Microfund of HKPolyU."
-            },
-            {
-                date: "Oct 2024",
-                description: "Congrats our work was reported by Research and Markets."
-            },
-            {
-                date: "June 2024",
-                description: "Dr. Fan YANG served as Session Chair, 2024 10th International Conference on Power Electronics Systems and Applications (PESA), IEEE."
-            }
-        ];
-
-        // Function to populate news
-        function populateNews(newsArray, containerId) {
-            const container = document.getElementById(containerId);
-            container.innerHTML = "";
-            newsArray.forEach(news => {
-                const newsItem = document.createElement('div');
-                newsItem.className = 'news-item';
-                newsItem.innerHTML = `
-                    <div class="news-date">${news.date}</div>
-                    <div class="news-description">${news.description}</div>
-                `;
-                container.appendChild(newsItem);
-            });
-        }
-
-        // Populate news sections
-        populateNews(publicationNews, 'publication-news');
-        populateNews(happenedNews, 'happened-news');
-
-        // Smooth scrolling for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Add fade-in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('section').forEach(section => {
-            observer.observe(section);
-        });
-
-        // Update current navigation item
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section[id]');
-            const navLinks = document.querySelectorAll('nav a');
-            
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= (sectionTop - 200)) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('current');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('current');
-                }
-            });
-        });
-    </script>
+<script>
+  // Dark/light toggle
+  const btn=document.getElementById('theme');
+  btn.onclick=()=>document.documentElement.classList.toggle('light');
+  if(window.matchMedia('(prefers-color-scheme: light)').matches){
+    document.documentElement.classList.add('light');
+  }
+  // Simple news array -> DOM
+  const NEWS=[
+    {d:'Aug 2025',t:'SET&A paper accepted — ultrasound-based battery diagnostics.'},
+    {d:'Dec 2024',t:'Applied Energy paper on in-situ ultrasound + EKF accepted.'},
+    {d:'May 2025',t:'MicroFund Awardee — Top performer team at PolyU.'}
+  ];
+  const list=document.getElementById('newsList');
+  NEWS.forEach(n=>{
+    const el=document.createElement('div'); el.className='item';
+    el.innerHTML=`<div class="pub-title">${n.d}</div><div class="muted">${n.t}</div>`;
+    list.appendChild(el);
+  });
+</script>
 </body>
 </html>
