@@ -538,61 +538,91 @@
 
             <!-- Publications Section -->
             <section id="publications" class="section fade-in">
-                <h2>Selected Publications</h2>
-                <p><em>* indicates corresponding author</em></p>
-                
-                <div class="publication-item">
-                    <div class="publication-title">Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model</div>
-                    <div class="publication-journal">Applied Energy, 2025 (IF = 11)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.apenergy.2024.125161">Read Paper</a>
-                    </div>
-                </div>
+  <h2>Publications</h2>
+  <p class="muted" style="margin-bottom:16px;"><em>* indicates corresponding author</em></p>
+  <div id="publist"></div>
+  <noscript>Please enable JavaScript to view the publication list.</noscript>
 
-                <div class="publication-item">
-                    <div class="publication-title">Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method</div>
-                    <div class="publication-journal">Journal of Energy Storage, 2024 (IF = 9.8)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.est.2024.113391">Read Paper</a>
-                        <a href="https://plu.mx/plum/a/?doi=10.1016%2Fj.est.2024.113391&theme=plum-sciencedirect-theme&hideUsage=true">Research News</a>
-                    </div>
-                </div>
+  <script>
+  // === Full publication list (edit/add here) ===
+  const PUBS = [
+    {
+      year: 2025,
+      title: "Real-time state-of-charge estimation for rechargeable batteries based on in-situ ultrasound-based battery health monitoring and extended Kalman filtering model",
+      venue: "Applied Energy",
+      doi: "https://doi.org/10.1016/j.apenergy.2024.125161"
+    },
+    {
+      year: 2025,
+      title: "Recent advances in ultrasound-based battery diagnostics: A reinforcement learning perspective",
+      venue: "Sustainable Energy Technologies and Assessments",
+      url: "https://www.sciencedirect.com/science/article/abs/pii/S2213138825003522"
+    },
+    {
+      year: 2024,
+      title: "Novel Joint Algorithm for State-of-Charge Estimation of Rechargeable Batteries Based on the Back Propagation Neural Network Combining Ultrasonic Inspection Method",
+      venue: "Journal of Energy Storage",
+      doi: "https://doi.org/10.1016/j.est.2024.113391",
+      url: "https://plu.mx/plum/a/?doi=10.1016%2Fj.est.2024.113391&theme=plum-sciencedirect-theme&hideUsage=true"
+    },
+    {
+      year: 2024,
+      title: "Modified Extended Kalman Filtering Algorithm for Precise Voltage and State-of-Charge Estimations of Rechargeable Batteries",
+      venue: "Journal of Energy Storage",
+      doi: "https://doi.org/10.1016/j.est.2022.105831"
+    },
+    {
+      year: 2024,
+      title: "Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model",
+      venue: "Remote Sensing",
+      doi: "https://doi.org/10.3390/rs15030599"
+    },
+    {
+      year: 2024,
+      title: "Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor",
+      venue: "Sensors",
+      doi: "https://doi.org/10.3390/s24185998"
+    }
+    // --- Add more objects here in the same format ---
+  ];
 
-                <div class="publication-item">
-                    <div class="publication-title">Recent advances in ultrasound-based battery diagnostics: A reinforcement learning perspective</div>
-                    <div class="publication-journal">Sustainable Energy Technologies and Assessments, 2025 (IF = 7)</div>
-                    <div class="publication-links">
-                        <a href="https://www.sciencedirect.com/science/article/abs/pii/S2213138825003522">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Modified Extended Kalman Filtering Algorithm for Precise Voltage and State-of-Charge Estimations of Rechargeable Batteries</div>
-                    <div class="publication-journal">Journal of Energy Storage, 2024 (IF = 9.8)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.1016/j.est.2022.105831">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Auto-Diagnosis of Time-of-Flight for Ultrasonic Signal Based on Defect Peaks Tracking Model</div>
-                    <div class="publication-journal">Remote Sensing, 2024 (IF = 4)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.3390/rs15030599">Read Paper</a>
-                    </div>
-                </div>
-                <div class="publication-item">
-                    <div class="publication-title">Development and Assessment of Artificial Intelligence-Empowered Gait Monitoring System Using Single Inertial Sensor</div>
-                    <div class="publication-journal">Sensors, 2024 (IF = 3.9)</div>
-                    <div class="publication-links">
-                        <a href="https://doi.org/10.3390/s24185998">Read Paper</a>
-                    </div>
-                </div>
+  // === Render grouped by year ===
+  const root = document.getElementById("publist");
+  // Sort newest first
+  PUBS.sort((a,b) => (b.year - a.year) || (a.title.localeCompare(b.title)));
 
-                <p style="margin-top: 30px;">
-                    <a href="https://scholar.google.com/citations?view_op=list_works&hl=zh-TW&user=FDrOozwAAAAJ" style="color: #2c3e50; text-decoration: underline; font-weight: 600;">
-                        View Complete Publication List on Google Scholar
-                    </a>
-                </p>
-            </section>
+  // Group by year
+  const groups = PUBS.reduce((acc, p) => {
+    acc[p.year] = acc[p.year] || [];
+    acc[p.year].push(p);
+    return acc;
+  }, {});
+
+  Object.keys(groups).sort((a,b)=> b - a).forEach(year => {
+    const block = document.createElement("div");
+    block.className = "year-block";
+    block.innerHTML = `<h3>${year}</h3>`;
+    groups[year].forEach(p => {
+      const item = document.createElement("div");
+      item.className = "publication-item";
+      const links = [];
+      if (p.doi) links.push(`<a href="${p.doi}" target="_blank" rel="noopener">DOI</a>`);
+      if (p.url && !p.doi) links.push(`<a href="${p.url}" target="_blank" rel="noopener">Link</a>`);
+      item.innerHTML = `
+        <div class="publication-title">${p.title}</div>
+        <div class="publication-journal">${p.venue}${p.note ? ", " + p.note : ""}</div>
+        ${links.length ? `<div class="publication-links">${links.join(" ")}</div>` : ""}
+      `;
+      block.appendChild(item);
+    });
+    root.appendChild(block);
+  });
+  </script>
+  <style>
+    .year-block h3 { color:#34495e; font-size:1.4rem; margin: 18px 0 8px 0; font-weight:600; }
+    .muted { color:#555; }
+  </style>
+</section>
 
             <!-- Projects Section -->
             <section id="projects" class="section fade-in">
@@ -857,3 +887,4 @@
     </script>
 </body>
 </html>
+
